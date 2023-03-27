@@ -66,7 +66,8 @@
 
 \documentclass[pt,oneside,onehalfspacing,bsc]{risethesis}
 
-\usepackage[english]{babel}
+% \usepackage[english]{babel}
+\usepackage[portuguese]{babel}
 \usepackage{colortbl}
 \usepackage{color}
 \usepackage[table]{xcolor}
@@ -81,6 +82,25 @@
 \usepackage{lipsum}
 \usepackage{url}
 \usepackage{natbib}
+% Packages adicionados
+% \usepackage[demo]{graphicx}
+% \usepackage{subfig}
+% \usepackage[T1]{fontenc}
+% \usepackage{mathpazo}
+% \usepackage{textcomp}
+\usepackage{nicefrac} % For comparison
+\usepackage{xfrac}    % Works better with other fonts
+\usepackage{float}
+\usepackage{graphicx} % Tabela
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage[newfloat]{minted} % Codigo
+\usepackage{subcaption}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Código Fonte}
+
+\newtcbox{\inlinecode}{on line, boxrule=0pt, boxsep=0pt, top=2pt, left=2pt, bottom=2pt, right=2pt, colback=gray!15, colframe=white, fontupper={\ttfamily \footnotesize}}
 
 \captionsetup[table]{position=top,justification=centering,width=.85\textwidth,labelfont=bf,font=small}
 \captionsetup[lstlisting]{position=top,justification=centering,width=.85\textwidth,labelfont=bf,font=small}
@@ -94,6 +114,8 @@
             pdfpagelabels,
             pdftitle={Rise Thesis Template (ABNT)},
             pdfauthor={Rise Thesis Template (ABNT)}]{hyperref}
+
+% \input{./listings_dart}
 
 \address{Garanhuns-PE}
 
@@ -109,7 +131,7 @@
 \majorfieldpt{Ciência da Computação}
 \majorfielden{Computer Science}
 
-\title{Enzitech: Um aplicativo móvel desenvolvido para experimentos e análises de solos}
+\title{Enzitech: Sistema de experimentação para análise e cálculo de atividades enzimáticas do solo}
 
 \date{2022}
 
@@ -136,15 +158,15 @@
 
 \begin{dedicatory}
 % TODO: Mudar
-Eu dedico este trabalho a todos os meus familiares, amigos e colegas que nunca deixaram de acreditar em mim.
+Lorem Ipsum
 \end{dedicatory}
 
 \acknowledgements
 % TODO: Mudar
 \input{agradecimentos}
 
-\begin{epigraph}[]{ Mewtwo}
-``As circunstâncias do nascimento de alguém são irrelevantes; é o que você faz com seu dom da vida que determina quem você é.``
+\begin{epigraph}[]{ John}
+``Lorem Ipsum``
 \end{epigraph}
 
 \resumo
@@ -175,6 +197,7 @@ Eu dedico este trabalho a todos os meus familiares, amigos e colegas que nunca d
 \include{chapters/fundamentacaoteorica}
 \include{chapters/metodologia}
 \include{chapters/desenvolvimento}
+\include{chapters/resultados}
 \include{chapters/conclusao}
 
 % References

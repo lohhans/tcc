@@ -4,15 +4,114 @@ Este capítulo descreve a metodologia aplicada no desenvolvimento do trabalho, q
 \section{Análise de Viabilidade}\label{sec:analise_viabilidade}
 Nesta fase foi feita uma estimativa das diversas maneiras de suprir as necessidades do cliente, identificando tanto a parte tecnológica como a parte de técnica. Foi verificado o retorno acadêmico da ferramenta, os avanços e melhorias no processo de experimentação do solo que seriam possíveis obter com a mesma.
 
-\section{Laboratório BCC Coworking}\label{sec:lab}
+\section{Definições do Sistema: Abordagens, Requisitos e Recursos}\label{sec:eng_sys}
+As \ac{ae} são as informações chave das funcionalidades do sistema que foi desenvolvido, desta forma, é importante entender nesta etapa suas características, aplicações e importância, portanto, é relevante salientar que o estudo das \acp{ae} do solo tem ganhado cada vez mais notoriedade devido à sua relação com a \ac{qs} e com a produtividade das culturas agrícolas. O cálculo dessas atividades torna-se fundamental para a compreensão dos processos bioquímicos que ocorrem no solo e para a avaliação do impacto das práticas de manejo no solo. No entanto, o cálculo das \acp{ae} do solo é um processo complexo e demorado, que envolve a utilização de várias técnicas e equipamentos específicos.
+
+Nesse contexto, o desenvolvimento deste sistema para o cálculo das \acp{ae} do solo torna-se uma solução promissora para aumentar a eficiência e a precisão desse processo. O aplicativo tem este objetivo, permitir o cálculo de forma automatizada das atividades de diversas enzimas do solo, como fosfatase ácida, $\beta$-glucosidase e urease.
+
+\subsection{Laboratório BCC Coworking}\label{sec:lab}
+% \section{Laboratório BCC Coworking}\label{sec:lab}
 O projeto teve início na disciplina de Desenvolvimento Distribuído de Software, no curso de \ac{bcc} da \ac{ufape}, o qual, logo em seguida, teve seu escopo de desenvolvimento integrado com o Laboratório \ac{bcc} Coworking, da mesma instituição, este que é um Laboratório de Pesquisa e Desenvolvimento projetado por docentes deste curso, o propósito deste espaço é fornecer um ambiente apropriado para o desenvolvimento de projetos reais, com a supervisão de profissionais da área para garantir o aprimoramento do conhecimento e experiência técnica. Este espaço é destinado aos estudantes que buscam autonomia, estímulo e desenvolvimento de projetos, visando melhorar sua produtividade e expandir seu conhecimento prático.
 
-\section{Equipe de desenvolvimento do Enzitech}
+\subsection{Equipe de desenvolvimento do Enzitech}
+% \section{Equipe de desenvolvimento do Enzitech}
 Segundo \cite{pressman2016engenharia}, a análise de mercado, a análise competitiva e a análise SWOT (que envolve a avaliação das forças, fraquezas, oportunidades e ameaças da empresa) são métodos comuns para identificar e avaliar oportunidades de produto na área de tecnologia. Essas análises são importantes para avaliar as necessidades do mercado, os produtos concorrentes, as forças e fraquezas da empresa e as oportunidades e ameaças. 
 
-A ideia do Enzitech foi concebida através de uma observação de melhoria dentre os docentes e discentes de agronomia, ao realizarem as atividades de campo, onde dados eram coletados em papéis e depois passados para uma planilha para o cálculo e coleta de resultados, assim, o Laboratório de Pesquisa em Solo da \ac{ufape} identificou a necessidade de desenvolver uma solução que pudesse aprimorar seus processos, portanto, recorreu à expertise do Laboratório BCC Coworking, reconhecido por suas soluções inovadoras e de alta qualidade, para que juntos pudessem desenvolver uma solução que atendesse a essas demandas específicas. 
+A ideia do Enzitech foi concebida através de uma observação de melhoria dentre os docentes e discentes de agronomia, ao realizarem as atividades de campo, onde dados eram coletados em papéis e depois passados para uma planilha para o cálculo e coleta de resultados, assim, o \ac{lema} da \ac{ufape} identificou a necessidade de desenvolver uma solução que pudesse aprimorar seus processos, portanto, recorreu à expertise do Laboratório BCC Coworking, reconhecido por suas soluções inovadoras e de alta qualidade, para que juntos pudessem desenvolver uma solução que atendesse a essas demandas específicas. 
 
 A partir daí o Enzitech já estava sendo moldado, onde a equipe foi formada por Armstrong Lohãns, Matheus Noronha, Weverton Cintra, José Vieira, Eduarda Interaminense, e as professoras Erika Valente e Jamille Barros — do curso de Agronomia — que respectivamente propuseram o sistema. A equipe do Enzitech realizou várias reuniões para obter um conjunto inicial de requisitos e elaborar uma breve apresentação da ideia do sistema, além de discutir como o sistema poderia melhorar os processos na área da Agronomia.
+
+\subsection{Explorando as etapas e protocolos envolvidos nas \acp{ae} do solo}
+Consequentemente, uma análise das etapas sobre os materiais usados, procedimentos de coleta, transporte, conservação e os protocolos que regem todo o processo das \acp{ae} do solo foi realizada, explicada e compreendida pela equipe, afim de facilitar a criação das regras de negócio que regem o funcionamento do sistema, ou seja, as regras que definem as principais operações e processos que ocorrem dentro do sistema para atender às necessidades de negócio, de forma clara e precisa.
+
+Em vista disso, o procedimento de coleta de amostras de solo para análise da atividade enzimática é semelhante ao utilizado para avaliação das propriedades químicas do solo. A coleta deve ser realizada preferencialmente na camada de 0 a 10 cm de profundidade do solo, que é a camada diagnóstica para enzimas do solo, ou de 20 a 40 cm, dependendo do tipo de solo, da cultura e finalidade do estudo, após o período chuvoso e coincidindo com a amostragem para análise química. É importante que a amostragem seja representativa da área avaliada, realizando múltiplas subamostras em áreas de cultivos anuais. Para evitar contaminação e perda de atividade biológica, é recomendado utilizar instrumentos esterilizados ou desinfestados, acondicionar as amostras em sacos plásticos ou tubos de polietileno bem fechados, identificá-las com informações sobre a área, a profundidade, a data e o responsável pela coleta, secá-las ao ar e peneirá-las. 
+
+A análise da atividade enzimática deve ser realizada o mais breve possível após a coleta, preferencialmente dentro de 24 horas, utilizando métodos colorimétricos padronizados para medir a atividade de enzimas como arilsulfatase, $\beta$-glucosidase, fosfatase ácida e alcalina, urease e outras.
+
+O solo coletado para análises enzimáticas deve ser seco e peneirado, com malha de 2mm. No entanto, para algumas enzimas, é necessário refrigerar as amostras imediatamente após a coleta, a fim de evitar perdas em quantidade de enzimas. A refrigeração das amostras de solo é uma prática recomendada para preservar a atividade enzimática do solo e evitar alterações causadas por fatores como temperatura, umidade e contaminação. No entanto, a refrigeração pode afetar negativamente algumas enzimas do solo, como a fosfatase. 
+
+A determinação da atividade de enzimas no solo é um desafio para os pesquisadores, devido à heterogeneidade espacial e temporal do solo e à influência das condições ambientais na expressão e estabilidade das enzimas. Os métodos analíticos devem ser padronizados e validados para cada tipo de solo e de enzima, e os resultados devem ser interpretados com cautela e integrados com outros indicadores biológicos do solo.
+
+A seguir, a demonstração das etapas do protocolo para a Fosfatase. O princípio da atividade das fosfomonoesterases, estando inclusas nesse grupo as fosfatases ácida e alcalina, versa determinar o teor de p-nitrofenol liberado após a incubação do solo com o substrato específico da enzima (p-nitrofenilfosfato).
+
+\subsubsection{Reagentes e soluções}
+\begin{itemize}
+   \item \textbf{Modified universal buffer (MUB estoque):} dissolver 12,1 g de THAM (Tris), 11,6 g de ácido maleico, 14,0 g de ácido cítrico, 6,3 g de ácido bórico em 500 mL de NaOH 1 mol/L e completar para 1.000 mL com água destilada em balão volumétrico. (Estocar em refrigerador);
+   \item \textbf{Modified universal buffer (MUB pH 6,5 fosfatase ácida ou pH 11 fosfatase alcalina):} pegar 200 ml da solução de MUB estoque e ajustar o pH desejado (pH 6,5 ou pH 11) com HCl 0,1 mol/L ou NaOH 1 mol/L, respectivamente, e completar para 500 mL em balão volumétrico com água destilada. Obs.: Preparar o volume desta solução de acordo com a quantidade de amostras realizadas;
+   \item \textbf{Solução de p-nitrofenilfosfato de sódio PNP 0,05 mol/L (Sigma):} dissolver 0,06 mL de p-nitrofenilfosfato substrato líquido em 10 mL de MUB pH desejado (pH 6,5 ou pH 11). Preparar o volume desta solução de acordo com a quantidade de amostras realizadas;
+   \item \textbf{Solução padrão de p-nitrofenol (Sigma):} dissolver 1 g de p-nitrofenol em 700 mL e completar para 1.000 mL com H2O destilada. (Estocar em refrigerador);
+   \item \textbf{Solução padrão diluída de p-nitrofenol (10 mg/L):} diluir 1 mL da solução padrão de p-nitrofenol em 100 mL de água destilada;
+   \item Solução de CaCl2 0,5 mol/L;
+   \item Solução de NaOH 0,5 mol/L;
+   \item Tolueno p.a. (esse reagente pode ser omitido quando o tempo de incubação for de 1 a 2 horas);
+ \end{itemize}
+
+\subsubsection{Procedimento}
+\begin{itemize}
+   \item Pesar 1 g de solo (passado em peneira de 2 mm) e colocar em tubo de ensaio (3 repetições e 2 brancos);
+   \item Pipetar: 0,25 mL de tolueno; 4 mL de MUB (pH 6,5 ou pH 11); 1 mL de solução de substrato PNP 0,05 mol/L (nos brancos a solução de PNP só é adicionada após a incubação), agitar em vórtex, vedar os tubos com papel filme e incubar em banho-maria a 37 ºC por 1 hora;
+   \item Após incubação adicionar 1 mL de PNP (apenas nos brancos), 1 mL de CaCl2 0,5 mol/L e 4 mL de NaOH 0,5 mol/L. Agitar em vórtex e filtrar em papel de filtro com auxílio de um funil em tubos de ensaio. Proceder à leitura da atividade em espectrofotômetro em absorbância no comprimento de onda de 400 nm;
+ \end{itemize}
+
+\subsubsection{Curva de calibração}
+Em seis tubos de ensaio pipetar alíquotas de 0, 1, 2, 3, 4 e 5 mL da solução padrão diluída de p-nitrofenol (10 mg/L), ajustar o volume para 5 mL com água destilada para cada ponto e proceder pipetando 1 mL de CaCl2 0,5 mol/L e 4 mL de NaOH 0,5 mol/L. Em seguida agitar em vórtex, vedar os tubos com papel filme e incubar a 37 ºC por 1 hora. Proceder à leitura em espectrofotômetro à 400 nm. Obs.: O sobrenadante deve ser colocado em cubeta sem misturar com o precipitado. (Fazer a curva em triplicata).
+
+\subsubsection{Cálculo para determinação da atividade}
+Utilizando alguns valores de exemplo, o cálculo é realizado da seguinte forma:
+
+\begin{itemize}
+   \item \textbf{Etapa 1 -} Calibração com os valores da curva:
+   \begin{table}[H]
+    \centering
+    \resizebox{12cm}{!}{%
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Concentração de p-nitrofenol \[\mu\] g/mL} & \textbf{Absorbância} \\ \hline
+    0 & 0 \\ \hline
+    1 & 0,102 \\ \hline
+    2 & 0,149 \\ \hline
+    3 & 0,223 \\ \hline
+    4 & 0,312 \\ \hline
+    5 & 0,382 \\ \hline
+    \end{tabular}}%
+    \caption{Relação de concentração x absorbância da solução}
+    \label{table:requisitos_funcionais}
+    \end{table}
+
+    O modelo da equação da reta é \textbf{y = ax + b} onde \textbf{Y} é a absorbância, \textbf{X} é a concentração de p-nitrofenol, \textbf{a} e \textbf{b} são parâmetros do ajuste do modelo. No exemplo, \textbf{a = 0,0747} e \textbf{b = 0,008}.
+
+    Resolvendo a equação para \textbf{X} (concentração de p-nitrofenol):
+    \[x = \frac{Y - b}{a}\]
+
+    Para calcular a atividade da Fosfatase, usando o exemplo da curva de calibração:
+    \[p-nitrofenol (\mu g/mL) = \frac{Y - 0,008}{0,0747}\]
+
+    O valor de absorbância da leitura da amostra (Y) para uso na equação (2) é a média das leituras de absorbância das duas repetições da amostra de solo, subtraída da absorbância da prova em branco. Considerando, como exemplo, a leitura de absorbância de duas repetições de uma amostra de solo e seu branco:
+
+    \textbf{Leitura da repetição 1:} 0,181 \\
+    \textbf{Leitura da repetição 2:} 0,192 \\
+    \textbf{Leitura da prova em Branco:} 0,02 \\
+    \textbf{Y =} (0,181 + 0,192) /2) – 0,02 \\
+    \textbf{Y =} 0,1865 – 0,02 \\
+    \textbf{Y = 0,1665} \\
+
+    Substituindo o \textbf{Y} na equação:
+    \[p-nitrofenol (\mu g/mL) = \frac{0,1665 - 0,008}{0,0747}\]
+    \[p-nitrofenol (\mu g/mL) = 2,122\]
+    
+
+   \item \textbf{Etapa 2 -} Para expressar a atividade da enzima em massa de solo, a partir da curva padrão:
+    \[p-nitrofenol (\mu g\;g^{-1} h^{-1}) = \frac{C x V}{g x t}\]
+
+    Onde, \textbf{C} = concentração de p-nitrofenol na suspensão de solo, em \[\mu\] g/mL; V= volume das soluções pipetadas (10,25 mL); \textbf{g} = peso do solo seco ao ar (g) e \textbf{t} = tempo de incubação (horas).
+
+    Ou C x 10,25. Na equação completa:
+    \[p-nitrofenol (\mu g\;g^{-1} h^{-1}) = \left(\frac{2,122}{mL} \right)x\left(\frac{10,25 mL}{1g x 1h} \right) = 21,75 \mu g\;g^{-1} h^{-1} \]
+
+    \textbf{• Vale salientar que esse cálculo é utilizado para as enzimas fosfatases, arilsulfatase e betaglucosidase.}
+    
+ \end{itemize}
+
 
 \section{Especificação de requisitos}\label{sec:especificacao_de_requisitos}
 A engenharia de requisitos é um processo fundamental na concepção e construção de sistemas, pois busca definir os requisitos do sistema em conjunto com os \textit{stakeholders}, produzindo uma série de artefatos em suas fases de concepção. Segundo \cite{kotonya1998requirements}, a engenharia de requisitos é o processo de descobrir, analisar, documentar e verificar serviços e restrições para um sistema. Embora não haja uma maneira irrefutável de garantir que as especificações construídas pela engenharia de requisitos sejam totalmente compatíveis com as necessidades dos \textit{stakeholders} e atendam às suas necessidades, este é o maior desafio encontrado na engenharia de requisitos \cite{pressman2016engenharia}. As etapas da engenharia de requisitos incluem a concepção e análise de requisitos, levantamento e compreensão dos requisitos junto ao cliente, negociação dos requisitos, especificação e modelagem desses requisitos, tendo como objetivo documentar as necessidades e os propósitos do software.

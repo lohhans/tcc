@@ -506,7 +506,7 @@ requirements for the degree of \@degree\ in \@majorfielden.
   \if@openright\cleardoublepage\else\clearpage\fi
   \thispagestyle{empty}
   \begin{center}
-  \includegraphics[scale=1.2]{logo_ufape_2.png} \\
+  \includegraphics[scale=0.15]{logo_ufape_2.png} \\
   \vfill
     \begin{center}
       \Large \@author
@@ -542,11 +542,11 @@ requirements for the degree of \@degree\ in \@majorfielden.
   \thispagestyle{empty}
   
 	\begin{figure}[ht]
-	\begin{minipage}[b]{1.5cm}
+	\begin{minipage}{0.125\textwidth}
 	  \includegraphics[width=2.5cm]{ufape_mono.png}
 	\end{minipage}
 	\hspace{0.2cm}
-	\begin{minipage}[b]{16cm}
+	\begin{minipage}{0.85\textwidth}
 	  {
 		  \if\@language0
     		  \sf\Large
@@ -673,23 +673,29 @@ requirements for the degree of \@degree\ in \@majorfielden.
   \vspace{5\baselineskip}
   
   \begin{center}
-  
+
   -----------------------------------------------------------------------\\
-  Profª. \\
-  Centro de Informática/UFAPE
-  
-  \vspace{\baselineskip}
-  -----------------------------------------------------------------------\\
-  Prof.  \\
-  Centro de Informática/UFAPE
+  Ícaro Lins Leitão da Cunha \\
+  Universidade Federal do Agreste de Pernambuco \\
+  Membro Interno
   
   \vspace{\baselineskip}
   -----------------------------------------------------------------------\\
-  Prof. \@adviser\\
-  Centro de Informática/UFAPE
+  Jamilly Alves de Barros  \\
+  Universidade Federal do Agreste de Pernambuco \\
+  Membro Externo
   
   \vspace{\baselineskip}
   -----------------------------------------------------------------------\\
+  Jean Carlos Teixeira de Araujo \\
+  Universidade Federal do Agreste de Pernambuco \\
+  Membro Interno
+  
+  \vspace{\baselineskip}
+  -----------------------------------------------------------------------\\
+  \@adviser \\
+  Universidade Federal do Agreste de Pernambuco \\
+  Professor Orientador
   
   \vfill
   \@address

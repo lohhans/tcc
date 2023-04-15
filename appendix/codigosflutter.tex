@@ -1,0 +1,177 @@
+\chapter{Códigos Flutter}\label{ch:codigosFlutter}
+
+\section{Código da tela \textit{Home Page} desenvolvida na Terceira Sprint}\label{code:home-sprint3}
+\begin{code}
+% \captionof{listing}{Home Page}
+\begin{minted}{dart}
+// imports suprimidos
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late final HomeController controller;
+  late final ExperimentsController experimentsController;
+  late final TreatmentsController treatmentsController;
+  late final AccountController accountController;
+
+  late List<Widget> _fragments;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = context.read<HomeController>();
+    experimentsController = context.read<ExperimentsController>();
+    treatmentsController = context.read<TreatmentsController>();
+    accountController = context.read<AccountController>();
+    initFragements();
+    if (mounted) {
+      Future.delayed(Duration.zero, () async {
+        await experimentsController.loadExperiments();
+        await treatmentsController.loadTreatments();
+        await accountController.loadAccount();
+      });
+      controller.addListener(() {
+        if (controller.state == HomeState.error) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(controller.failure!.message),
+            ),
+          );
+        }
+      });
+    }
+  }
+
+  initFragements() {
+    _fragments = [
+      ExperimentsPage(
+        homeController: controller,
+      ),
+      TreatmentsPage(
+        homeController: controller,
+      ),
+      AccountPage(
+        homeController: controller,
+      ),
+    ];
+  }
+
+  Widget? get dealWithFloatingActionButton {
+    if (controller.fragmentIndex == 0) {
+      return FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            RouteGenerator.createExperiment,
+          );
+        },
+        label: Text(
+          "Cadastrar\nexperimento",
+          style: TextStyles.buttonBackground,
+        ),
+        icon: const Icon(
+          PhosphorIcons.pencilLine,
+          color: AppColors.white,
+          size: 30,
+        ),
+      );
+    }
+
+    if (controller.fragmentIndex == 1) {
+      return FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            RouteGenerator.createTreatment,
+          );
+        },
+        label: Text(
+          "Cadastrar\ntratamento",
+          style: TextStyles.buttonBackground,
+        ),
+        icon: const Icon(
+          PhosphorIcons.pencilLine,
+          color: AppColors.white,
+          size: 30,
+        ),
+      );
+    }
+
+    return null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = context.watch<HomeController>();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: SvgPicture.asset(
+          'assets/images/logo.svg',
+          fit: BoxFit.contain,
+          alignment: Alignment.center,
+        ),
+      ),
+      body: ChangeNotifierProvider(
+        create: (BuildContext context) {},
+        child: _fragments[controller.fragmentIndex],
+      ),
+      floatingActionButton: dealWithFloatingActionButton,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(PhosphorIcons.flask),
+            label: 'Experimentos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(PhosphorIcons.testTube),
+            label: 'Tratamentos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(PhosphorIcons.userCircleGear),
+            label: 'Conta',
+          ),
+        ],
+        currentIndex: controller.fragmentIndex,
+        selectedItemColor: AppColors.white,
+        backgroundColor: AppColors.primary,
+        onTap: (index) => controller.setFragmentIndex(index),
+      ),
+    );
+  }
+}
+\end{minted}
+\end{code}
+
+\section{Trecho de código para realizar a checagem de autenticação e pré-carregamento dos dados desenvolvido na Sprint 6}\label{code:check-auth}
+\begin{code}
+% \captionof{listing}{Trecho de código para realizar a checagem de autenticação e pré-carregamento dos dados}
+% \label{code:dart-code}
+\begin{minted}{dart}
+_checkAuth() async {
+    Future.delayed(Duration.zero).then((_) async {
+    String token = await getToken() ?? '';
+
+    if (!mounted) return;
+
+    if (token.isEmpty) {
+        Navigator.pushReplacementNamed(context, RouteGenerator.auth);
+    } else {
+        await Provider.of<HomeViewmodel>(context, listen: false)
+        .getContent()
+        .then((value) =>
+            Navigator.pushReplacementNamed(
+                context, 
+                RouteGenerator.home,
+            ),
+        );
+      }
+    });
+  }
+\end{minted}
+\end{code}

@@ -96,6 +96,8 @@
 \usepackage{tcolorbox}
 \usepackage[newfloat]{minted} % Codigo
 \usepackage{subcaption}
+\usepackage{tabularray}
+
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=Código Fonte}
@@ -112,8 +114,8 @@
             urlcolor=black,
             colorlinks,
             pdfpagelabels,
-            pdftitle={Rise Thesis Template (ABNT)},
-            pdfauthor={Rise Thesis Template (ABNT)}]{hyperref}
+            pdftitle={Sistema de experimentos para análise e cálculo de atividades enzimáticas do solo},
+            pdfauthor={Armstrong Lohãns de Melo Gomes Quintino}]{hyperref}
 
 % \input{./listings_dart}
 
@@ -122,6 +124,8 @@
 \universitypt{Universidade Federal do Agreste de Pernambuco}
 \universityen{Federal University of the Agreste of Pernambuco}
 
+\departmentpt{}
+\departmenten{}
 % \departmentpt{Centro de Informática}
 % \departmenten{Center for Informatics}
 
@@ -131,9 +135,14 @@
 \majorfieldpt{Ciência da Computação}
 \majorfielden{Computer Science}
 
-\title{Enzitech: Sistema de experimentação para análise e cálculo de atividades enzimáticas do solo}
+%\title{Enzitech: Sistema de experimentação para análise e cálculo de atividades enzimáticas do solo}
 
-\date{2022}
+\title{Sistema de experimentos para análise e cálculo de atividades enzimáticas do solo}
+
+%\title{Sistema para Análise e Cálculo de atividades enzimáticas do solo}
+
+
+\date{2023}
 
 \author{Armstrong Lohãns de Melo Gomes Quintino}
 \adviser{Rodrigo Gusmão de Carvalho Rocha}
@@ -155,18 +164,22 @@
 \end{fichacatalografica}
 
 \banca
+% \begin
+  % Jean Carlos de Araújo Teixeira
+  % Ícaro Lins Leitão da Cunha
+  % Jamilly Barros
+
 
 \begin{dedicatory}
-% TODO: Mudar
-Lorem Ipsum
+Eu dedico este trabalho a todos os meus familiares, amigos e colegas que sempre acreditaram em mim, dedico em especial ao meu avô paterno, Vovô Zezinho, que não está mais aqui, e minha avó materna, Vó Augusta, a quem tenho grande apreço e orgulho de poder compartilhar esta conquista.
 \end{dedicatory}
 
 \acknowledgements
 % TODO: Mudar
 \input{agradecimentos}
 
-\begin{epigraph}[]{ John}
-``Lorem Ipsum``
+\begin{epigraph}[]{ Mewtwo}
+``As circunstâncias do nascimento de alguém são irrelevantes; é o que você faz com seu dom da vida que determina quem você é.``
 \end{epigraph}
 
 \resumo
@@ -195,7 +208,7 @@ Lorem Ipsum
 
 \include{chapters/introducao}
 \include{chapters/fundamentacaoteorica}
-\include{chapters/metodologia}
+\include{chapters/metodosutilizados}
 \include{chapters/desenvolvimento}
 \include{chapters/resultados}
 \include{chapters/conclusao}
@@ -208,7 +221,8 @@ Lorem Ipsum
 
 % Appendix
 
-% \theappendix
-% \include{appendix/mapping-study}
+\theappendix\label{appendix}
+\include{appendix/codigosflutter}
+\include{appendix/testes}
 
 \end{document}

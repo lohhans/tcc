@@ -1,15 +1,49 @@
-\chapter{Conclusão}
-[EM DESENVOLVIMENTO até 31/03/23]
+\chapter{Conclusão}\label{ch:conclusao}
+% No decorrer deste trabalho acadêmico, foram observados e analisados desafios modernos no que se refere à qualidade do solo para a produção de alimentos no cenário do agronegócio brasileiro, em destaque, o uso de ferramentas para a realização de experimentos e análises do solo, juntamente com a inovação digital para melhor gerir a produção em campos agrícolas, por conseguinte, utilizar tais inovações como meio de preservação ambiental. Desta maneira, ao estudar a forma como é medido a qualidade de um solo para o cultivo de determinadas matérias-primas, surge a proposta de vincular o desenvolvimento de software a um método de avaliação do solo por meio de cálculos dos dados coletados nestes experimentos, buscando maior eficácia e praticidade para este meio e trazendo uma solução prática para esta problemática, auxiliando alunos e pesquisadores da área.
+Durante a realização deste estudo acadêmico, foram identificados e analisados desafios contemporâneos relacionados à qualidade do solo para a produção de alimentos no contexto do agronegócio brasileiro. Entre os aspectos destacados, destaca-se o uso de ferramentas para experimentos e análises do solo, juntamente com a inovação digital para gerenciar melhor a produção agrícola e, portanto, utilizar essas inovações como meio de preservação ambiental. 
 
-\section{Trabalhos futuros}
-[EM DESENVOLVIMENTO até 31/03/23]
+Nesse sentido, ao investigar os métodos de avaliação da qualidade do solo para o cultivo de culturas específicas, sugere-se a integração do desenvolvimento de software a um método de avaliação do solo que calcule os dados coletados nesses experimentos, buscando maior eficácia e praticidade, bem como uma solução prática para esses desafios, apoiando estudantes e pesquisadores do setor.
 
-% \lipsum[1]
+Em vista disso, o projeto denominado Enzitech visa apresentar uma solução prática para a administração dos experimentos realizados para análise e cálculo de atividades enzimáticas do solo, sendo, na prática, um sistema disponibilizado via \ac{app} \textit{mobile}, o qual permite acompanhar todas as etapas da criação de tratamentos, enzimas, experimentos e seus resultados.
 
-% \section{Section}
+% Uma das principais etapas do trabalho foi definir a metodologia, como e quais seriam os processos de modelagem do software, primeiramente foi feita uma análise dos requisitos com os clientes, após isso começou o trabalho de concepção dos modelos, foram feitos protótipos, diagramas, e planos para traçar o desenvolvimento do projeto.
+Uma das etapas mais importantes do projeto foi estabelecer a metodologia a ser seguida, incluindo quais processos seriam utilizados para desenvolver o software. Para isso, foram realizadas análises de requisitos em conjunto com os clientes e, em seguida, iniciou-se a criação dos modelos, por meio de protótipos, diagramas e planos, para orientar o desenvolvimento do projeto.
 
-% \lipsum[1]
+% A proposta do sistema foi o desenvolvimento dos modelos utilizados na análise e coleta de requisitos, além de documentos que serão utilizados durante o desenvolvimento. Após ser desenvolvido o protótipo do sistema foram feitos os diagramas UML, além da modelagem de dados e o plano de gerenciamento que servirá de base para organização tanto do gerente do projeto como guia para os desenvolvedores.
+A ideia do sistema consistiu em criar modelos para análise e coleta de requisitos, além de documentos que seriam utilizados durante o desenvolvimento. Depois que o protótipo do sistema foi criado, foram elaborados os diagramas UML, bem como a modelagem de dados e o plano de gerenciamento, que servirá de referência tanto para o gerente do projeto quanto para guiar os desenvolvedores.
 
-% \subsection{Subsection}
+% Às organizações do agronegócio buscam de várias formas métodos de conseguir eliminar os resíduos gerados pelas aves, bem como conseguir adubo para suas plantações, logo o organosoft reúne às necessidades dos dois tipos de
+% produtores e propoem um sistema para gerenciamento de resíduos agropecuários, sendo assim esse produto tem a possibilidade de captar diversos investidores.
+Os estudantes, cientistas e corpo docente de Agronomia da \ac{ufape}, ao qual o sistema foi criado inicialmente para atender, buscam um melhor gerenciamento dos experimentos que dizem respeito às análises do solo, eliminando dezenas de planilhas, papéis e outros artefatos que podem ser facilmente alterados, ou preenchidos incorretamente, podendo gerar resultados que atrapalhem os estudos daquele solo em questão, desta forma, esse produto tem a possibilidade de expandir seu alcance para inúmeras instituições que buscam otimizações nestes processos.
 
-% \lipsum[1]
+Por último, com base no processo de desenvolvimento, é importante ressaltar que a construção deste sistema e, portanto, deste trabalho, pode ser vista como um ponto de partida para novas investigações, a fim de acrescentar e contribuir para o conhecimento científico. Na seção, serão apresentadas sugestões para trabalhos futuros.
+
+\section{Principais contribuições}\label{sec:contribuicoes}
+As principais contribuições com o desenvolvimento do Enzitech serão apresentadas a seguir:
+
+\begin{itemize}
+    \item Organização de experimentos sobre o solo com base no usuário, permitindo a separação em categorias como "em andamento" e "concluídos", disponibilizando um acesso fácil e centralizado às informações.
+    \item Redução de erros oriundos de dados inconformes.
+    \item Fácil preenchimento e visualizações de dados relativos à cada experimento.
+    \item Geração de resultados na forma tradicional em planilhas, para o acompanhamento e fácil compartilhamento das informações.
+    \item Possibilidade de manuseio dos experimentos em ambientes com difícil acesso a dispositivos não-móveis, como um computador pessoal, por exemplo.
+    
+\end{itemize}
+
+\section{Principais limitações}\label{sec:limitacoes}
+As maiores dificuldades para desenvolvimento do sistema Enzitech, estão basicamente no tempo disponível para desenvolvimento, na infraestrutura disponibilizada para o desenvolvimento do sistema e na equipe reduzida, principalmente. Estão listadas a seguir as principais limitações:\begin{itemize}
+    \item O sistema não lê planilhas já existentes e transforma em dados para o \ac{app}.
+    \item O aplicativo não funciona 100\% na arquitetura \textit{offline-first}, que visa disponibilizar o acesso à todas as ferramentas com dados baixados previamente, possibilitando que o usuário envie as atualizações posteriormente.
+    \item Existem limitações quanto ao \ac{so} Android, o qual desde a versão 11 (\ac{api} Level 30) não permite o fácil gerenciamento das planilhas salvas no dispositivo, por medidas de segurança e privacidade \footnote{\label{android_11}Atualizações de armazenamento no Android 11: \url{https://developer.android.com/about/versions/11/privacy/storage?hl=pt-br}}, assim gerando possíveis erros (já tratados) caso o usuário mantenha planilhas baixadas, reinstale o aplicativo e tente baixá-las novamente.
+\end{itemize}
+
+\section{Trabalhos Futuros}\label{sec:futuro}
+Há alguns aspectos neste trabalho que podem ser melhorados, com base neste objetivo, serão apresentadas algumas sugestões para dar continuidade ao trabalho realizado:
+\begin{itemize}
+    \item A realização de testes com usuários reais para validação pode abrir novas possibilidades de estudos na área de interface e experiência do usuário.
+    \item Melhorar a exibição de resultados tanto no \ac{app}, quanto nas planilhas, utilizando mais dados que possam ser gerados e disponibilizados pela \ac{api}.
+    \item Um estudo profundo sobre o novo sistema de gerência de arquivos no \ac{so} Android pode solucionar a limitação previamente citada.
+    \item A possibilidade de leitura de planilhas em determinado formato para a inserção destes dados no sistema Enzitech.
+    \item Implementação de mais funcionalidades seguindo a arquitetura \textit{offline-first}.
+    \item Disponibilização do aplicativo para plataformas do \ac{so} iOS, da Apple, visto que o aplicativo foi desenvolvido utilizando o \textit{framework} Flutter, que permite a geração do mesmo app para diversas plataformas, sendo necessário somente alguns ajustes específicos de cada \ac{so}.
+\end{itemize}

@@ -1,0 +1,26 @@
+\chapter{Testes}\label{ch:testes}
+
+\section{Trecho de código do teste de unidade para enzima}\label{code:teste-unidade-enzima}
+\begin{code}
+% \captionof{listing}{Trecho de código para realizar a checagem de autenticação e pré-carregamento dos dados}
+% \label{code:dart-code}
+\begin{minted}{dart}
+main() {
+  test(
+    "Should not return null on Enzyme entity",
+    () {
+      EnzymeEntity enzyme = EnzymeEntity(
+        id: "1",
+        name: "Enzima",
+        type: "Tipo",
+        formula: "a+b=c",
+        variableA: 0.52,
+        variableB: 0.32,
+      );
+
+      expect(enzyme, isNotNull);
+    },
+  );
+}
+\end{minted}
+\end{code}

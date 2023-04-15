@@ -1,217 +1,18 @@
-\chapter{Desenvolvimento}
-Neste capítulo serão abordados diversos aspectos do desenvolvimento do sistema, desde a configuração do ambiente de desenvolvimento até o fluxo de trabalho utilizado durante o processo de criação da aplicação. Serão apresentados os desafios encontrados durante o desenvolvimento, bem como as soluções adotadas para superá-los, além de uma visão geral sobre as funcionalidades do sistema e as tecnologias utilizadas para sua criação.
+\chapter{Proposta e Desenvolvimento da Aplicação}\label{ch:proposta}
+Neste capítulo serão abordados diversos aspectos do desenvolvimento do sistema, desde a configuração de todo o ambiente de desenvolvimento até o fluxo de trabalho utilizado durante o processo de criação da aplicação. Serão apresentados os desafios encontrados durante o desenvolvimento, bem como as soluções adotadas para superá-los, além de uma visão geral sobre as funcionalidades do sistema e as tecnologias utilizadas para sua criação.
 
-\section{Especificação de requisitos}\label{sec:especificacao_de_requisitos}
-% Descrever os requisitos funcionais e não funcionais da aplicação móvel, incluindo as funcionalidades que ela deve ter e as plataformas em que deve ser executada.
-O pontapé inicial do projeto foi uma reunião entre as partes envolvidas, cliente (docentes de Agronomia da \ac{ufape}), \ac{po} (Proprietário do produto, em tradução livre) e desenvolvedores, a fim de levantar os requisitos funcionais do \ac{mvp}. Nesta reunião foram explanados os pontos onde o \ac{app} auxiliaria no gerenciamento de experimentos e no processo dos cálculos enzimáticos, foram discutidas regras de negócios e requisitos necessários, identidade visual, além do início de um protótipo de baixa fidelidade para conduzir o \textit{brainstorming} a respeito de como os requisitos se transformariam em funcionalidades, e claro, as tecnologias utilizadas em todo o ciclo de desenvolvimento.
+\section{Processo de desenvolvimento de software}
+De acordo com \cite{sommerville2011software}: "O processo de desenvolvimento de software é um conjunto de atividades que visam transformar requisitos de software em um sistema de software. Essas atividades são divididas em fases, cada uma com objetivos específicos e entregas definidas. O processo é composto por atividades de elicitação, análise, projeto, implementação, teste e manutenção. Cada atividade é composta por técnicas, métodos e ferramentas que visam aprimorar a qualidade do software produzido. A escolha do processo de desenvolvimento de software a ser utilizado depende do tipo de projeto, das necessidades do cliente e das características da equipe de desenvolvimento".
 
-O projeto surge com necessidade de um \ac{app} para celulares, facilitando a mobilidade dos usuários nos locais de coletas de dados para os experimentos, dessa forma, tudo foi pensado voltado ao desenvolvimento deste aplicativo móvel.
-
-\subsection{Requisitos funcionais}\label{ssec:requisitos_funcionais}
-A partir disso, os requisitos funcionais do sistema foram definidos e especificados de acordo com a \tabref{table:requisitos_funcionais}, abaixo.
-
-\begin{table}[H]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Código} & \textbf{Descrição} \\ \hline
-RF01   & O usuário deve ser capaz de se cadastrar no sistema \\ \hline
-RF02   & O usuário deve ser capaz de realizar \textit{login} no sistema \\ \hline
-RF03   & O usuário deve ser capaz de recuperar sua senha no sistema \\ \hline
-RF04   & O usuário deve ser capaz de criar um tratamento \\ \hline
-RF05   & O usuário deve ser capaz de deletar um tratamento \\ \hline
-RF06   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar todos os tratamentos disponíveis}\hbox{\strut no sistema para seus experimentos}} \\ \hline
-RF07   & O usuário administrador deve ser capaz de criar uma nova enzima \\ \hline
-RF08   & O usuário administrador deve ser capaz de deletar uma enzima \\ \hline
-RF09   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar todas as enzimas disponíveis}\hbox{\strut no sistema para seus experimentos}} \\ \hline
-RF10   & O usuário deve ser capaz de criar um novo experimento \\ \hline
-RF11   & O usuário deve ser capaz de deletar um experimento \\ \hline
-RF12   & O usuário deve ser capaz de visualizar seus experimentos cadastrados \\ \hline
-RF13   & \vtop{\hbox{\strut O usuário deve ser capaz de utilizar filtros de busca}\hbox{\strut para visualizar seus experimentos cadastrados}} \\ \hline
-RF14   & O usuário deve ser capaz de visualizar detalhes dos seus experimentos cadastrados \\ \hline
-RF15   & \vtop{\hbox{\strut O usuário deve ser capaz de inserir dados para o cálculo enzimático}\hbox{\strut no seu experimento}} \\ \hline
-RF16   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar resultados discrepantes do cálculo}\hbox{\strut enzimático antes de salvar no seu experimento}}  \\ \hline
-RF17   & \vtop{\hbox{\strut O usuário deve ser capaz de editar o resultado do cálculo enzimático}\hbox{\strut antes de salvar no seu experimento}} \\ \hline
-RF18   & \vtop{\hbox{\strut O usuário deve ser capaz de salvar o resultado do cálculo enzimático}\hbox{\strut no seu experimento}} \\ \hline
-RF19   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar os resultados e o progresso}\hbox{\strut do seu experimento}} \\ \hline
-RF20   & O usuário deve ser capaz de exportar os resultados do seu experimento  \\ \hline
-
-\end{tabular}%
-}
-\caption{Descrição dos requisitos funcionais do sistema}
-\label{table:requisitos_funcionais}
-\end{table}
-
-Segundo \cite{pressman2016engenharia}, os requisitos funcionais, que descrevem as funções e serviços que o software deve oferecer, descrevem como o software deve funcionar, quais entradas devem ser processadas e quais saídas devem ser geradas em resposta a essas entradas. Neste sentido, os requisitos funcionais descritos na \tabref{table:requisitos_funcionais} têm o objetivo de especificar as funcionalidades que o sistema proposto deve oferecer.
-
-\subsection{Casos de uso}\label{ssec:casos_de_uso}
-
-Os Casos de Uso (\textit{Use Cases}) são uma técnica de modelagem de requisitos de software que descrevem as interações entre o usuário e o sistema. Eles ajudam a identificar as funcionalidades e serviços que o software deve oferecer, além de fornecer um meio de comunicação claro entre as equipes de desenvolvimento e os \textit{stakeholders}. A partir disto, foi elaborado um conjunto de casos de uso do sistema, demonstrado na \tabref{table:casos_de_uso}, com o objetivo de centrar os requisitos funcionais descritos na \tabref{table:requisitos_funcionais} e relacionar os mesmos com os tipos de usuários do sistema.
-
-\begin{table}[H]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{Código} & \textbf{Descrição} & \textbf{Tipo de usuário} & \textbf{\vtop{\hbox{\strut Requisitos funcionais}\hbox{\strut contemplados}}}\\ \hline
-UC01 & Fazer cadastro no sistema & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF01 \\ \hline
-UC02 & Fazer \textit{login} no sistema & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF02 \\ \hline
-UC03 & Recuperar senha no sistema & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF03 \\ \hline
-UC04 & Criar, deletar, visualizar e usar tratamentos & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF04, RF05 e RF06 \\ \hline
-UC05 & Criar e deletar enzimas & Administrador & RF07 e RF08 \\ \hline
-UC06 & Visualizar e usar enzimas & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF09 \\ \hline
-UC07 & Criar, deletar, filtrar e visualizar experimentos & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} &  RF10, RF11, RF12 e RF13 \\ \hline
-UC08 & Visualizar detalhes do experimento & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF14 \\ \hline
-UC09 & \vtop{\hbox{\strut Inserir dados, editar e salvar o}\hbox{\strut cálculo enzimático no experimento}} & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF15, RF16, RF17 e RF18 \\ \hline
-UC10 & Visualizar resultados do experimento & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF19 \\ \hline
-UC11 & Compartilhar resultados do experimento & \vtop{\hbox{\strut Usuário comum,}\hbox{\strut Administrador}} & RF20 \\ \hline
-
-\end{tabular}
-}
-\caption{Casos de Uso do sistema}
-\label{table:casos_de_uso}
-\end{table}
-
-Uma reprodução visual dos Casos de Uso apontados na \tabref{table:casos_de_uso} e as suas interações com os usuários foi elaborada, na \figref{fig:use-cases-enzitech}. Este diagrama utiliza \ac{uml} — em português: Linguagem de Modelagem Unificada — uma linguagem para visualização, especificação, construção e documentação de artefatos de um software em desenvolvimento, desta forma o Diagrama de \textit{Use Cases} \footnote{Diagrama de \textit{Use Cases}: \url{http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/uml/diagramas/usecases/usecases.htm}} utilizado abaixo tem o objetivo de auxiliar a comunicação entre os analistas e o cliente, descrevendo um cenário que mostra as funcionalidades do sistema do ponto de vista do usuário. O cliente deve ver neste diagrama as principais funcionalidades de seu sistema.
+Como será elucidado logo após, na seção de \nameref{sec:sprint}, o processo do projeto conta com variações por questões particulares de todos os envolvidos, um dos principais motivos é por conta do mesmo ser realizado em um ambiente acadêmico. O modelo final do desenvolvimento do software deste projeto está representado na \figref{fig:processo_agil} abaixo.
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/use-cases-enzitech.png}
-  \caption{Diagrama de Casos de Uso do sistema.}
-  % \acsfont{Fonte: Autoria própria}
-  \label{fig:use-cases-enzitech}
+  \includegraphics[width=\columnwidth]{images/processo_agil.png}
+  \caption{Representação do Processo Ágil de Desenvolvimento de Software para o Enzitech}
+  \acsfont{Fonte: Adaptação de DKDGroup}
+  \label{fig:processo_agil}
 \end{figure}
-
-Graças ao diagrama acima, é possível notar, de forma simples, que um usuário administrador possui um privilégio em comparação ao usuário comum: a criação e exclusão das enzimas, este Caso de Uso que ficou restrito à administração do sistema por ser compartilhada entre todos os usuários do Enzitech, podendo causar perdas de dados se sua alteração for realizada por um usuário comum, portando, surgiu a necessidade de diferenciar ambos os tipos de usuários no sistema e realizar estas validações para a disponibilização dessa \textit{feature}. 
-
-\section{Protótipo}
-\cite{warfel2009prototyping} destaca que os protótipos de baixa fidelidade são rápidos e baratos de criar, permitindo que os \textit{designers} testem e refinem rapidamente ideias iniciais. Já os protótipos de alta fidelidade, embora mais caros e demorados, podem ajudar a obter \textit{feedback} mais preciso e detalhado sobre o \textit{design} e a usabilidade do software.
-
-Dentre as diversas reuniões do projeto, houve a discussão das funcionalidades para gerar um protótipo de baixa fidelidade, para possíveis refinamentos, antes da elaboração de um protótipo de alta fidelidade, que demanda mais tempo e esforço. Junto desse protótipo, foi idealizado a identidade visual e o nome oficial para o projeto, que passou a se chamar "Enzitech".
-
-\begin{figure}[H]
-\centering
-  \includegraphics[width=\columnwidth]{images/prototipo_baixa.png}
-  \caption{Protótipo final de baixa fidelidade.}
-  % \acsfont{Fonte: Autoria própria}
-  \label{fig:prototipo_baixa}
-\end{figure}
-
-Como é possível ver na \figref{fig:prototipo_baixa}, o protótipo de baixa fidelidade trás o desenho das principais funcionalidades do sistema, além de dar uma ideia do layout final da aplicação.
-
-\begin{figure}[H]
-\centering
-  \includegraphics[width=\columnwidth]{images/exemplo_prototipo_alta.png}
-  \caption{Parte do protótipo final de alta fidelidade.}
-  % \acsfont{Fonte: Autoria própria}
-  \label{fig:exemplo_prototipo_alta}
-\end{figure}
-
-Já nas \figref{fig:exemplo_prototipo_alta} e \figref{fig:prototipo_alta}, é possível verificar mais a fundo todo o \textit{design-system} aplicado, averiguar comportamentos das telas, fluxo de navegação, entre outras vantagens, trazendo uma versão muito mais refinada da aplicação, auxiliando o desenvolvimento e facilitando a visão do sistema para o cliente, onde antes era definido somente por Casos de Uso.
-
-\begin{figure}[H]
-\centering
-  \includegraphics[width=\columnwidth]{images/prototipo_alta.png}
-  \caption{Visão geral do protótipo final de alta fidelidade.}
-  % \acsfont{Fonte: Autoria própria}
-  \label{fig:prototipo_alta}
-\end{figure}
-
-
-\section{Detalhes técnicos do aplicativo}\label{sec:detalhes_tec}
-Nesta seção, serão apresentados aspectos como tecnologias utilizadas, os passos necessários para a configuração do ambiente de desenvolvimento, a instalação do Flutter, ferramentas e bibliotecas utilizadas, integrações, gerenciamento de dependências, modelos de dados e o fluxo de trabalho.
-
-\subsection{Instalação do Flutter}\label{ssec:instalacao_flutter}
-% Instalação do Flutter e configuração do ambiente de desenvolvimento: Aqui, é importante descrever os passos necessários para instalar o Flutter e configurar o ambiente de desenvolvimento, incluindo a instalação do Android Studio, do emulador Android e da SDK do Android.
-Antes de tudo, é necessário elucidar os requisitos para montar um ambiente de desenvolvimento voltado à criação de \acp{app} em Flutter, este \ac{sdk} está disponível nos principais \acp{so} de \acp{pc}, ChromeOS, macOS, Linux e Windows, sendo este último o escolhido como ambiente para o desenvolvimento desta aplicação, o qual será explicado o processo de instalação aqui.
-
-De acordo com o site oficial\footnote{\label{flutter_install}Instalação do Flutter no Windows: \url{https://docs.flutter.dev/get-started/install/windows}}, para instalar e executar o Flutter, o ambiente de desenvolvimento deve atender a estes requisitos mínimos:
-\begin{itemize}
-   \item Windows 10 ou posterior (64 bits), baseado em x86-64;
-   \item 1,64 GB de espaço livre no disco (não inclui espaço em disco para IDE/ferramentas);
-   \item Ferramentas no ambiente do Windows:
-   \begin{itemize}
-     \item Windows PowerShell 5.0 ou mais recente (pré-instalado com o Windows 10);
-     \item Git para Windows 2.x, com a opção "Use o Git no prompt de comando do Windows";
-   \end{itemize}
- \end{itemize}
-
- Com todos os requisitos preenchidos, basta seguir o passo a passo detalhado como consta no site oficial\footref{flutter_install}.
-
-\subsection{Instalação do Android Studio}\label{ssec:instalacao_android_studio}
-Como consta no tutorial oficial\footref{flutter_install}, a instalação do Android Studio é essencial, porém neste passo, gosto de utilizar o \textit{JetBrains Toolbox App}\footnote{\label{toolbox}\textit{JetBrains Toolbox App}: \url{https://www.jetbrains.com/pt-br/toolbox-app/}}, que faz a instalação e futuras atualizações em poucos cliques. Após instalar o \textit{JetBrains Toolbox App}, basta achar o Android Studio e clicar em instalar.
-
-\begin{figure}[H]
-\centering
-  \includegraphics{images/toolbox.png}
-  \caption{\textit{JetBrains Toolbox App}}
-  % \acsfont{Fonte: Autoria própria}
-  \label{fig:toolbox}
-\end{figure}
-
-Após instalado, é necessário abrir o Android Studio, fazer sua configuração inicial e configurar mais alguns passos, dentre eles, fazer a instalação de um emulador Android para utilizar no desenvolvimento, caso não queira utilizar um dispositivo físico, veja a seguir:
-\begin{enumerate}
-   \item Habilitar a "aceleração de VM" em sua máquina Windows;
-   \item Na tela inicial do Android Studio, clique no ícone \textit{AVD Manager} e selecione \textit{Create Virtual Device…};
-   \item Escolha uma definição de dispositivo e selecione "Avançar";
-   \item Selecione uma ou mais imagens do sistema para as versões do Android que deseja emular e selecione Avançar. Uma imagem x86 ou x86\_64 é recomendada;
-   \item Na aba de Performance do emulador, selecione Hardware - GLES 2.0 para habilitar a aceleração de hardware;
-   \item Verifique se tudo está correto e selecione "Concluir";
-   \item Por fim, basta executar o emulador e ele iniciará;
- \end{enumerate}
-
- Outro passo imprescindível é ativar as ferramentas \ac{sdk} necessárias para a compilação do projeto Flutter em um arquivo executável \textsc{.apk} para o Android, basta seguir este passo a passo:
- 
- \begin{enumerate}
-   \item Na tela inicial do Android Studio, clicar em \textit{File > Settings > Appearance \& Behavior > System Settings > \textit{Plugins}};
-   \item Na aba \textit{Marketplace}, busque e instale os \textit{plugins} "Dart" e "Flutter";
-   \item Nesta mesma tela, no menu lateral, clique em \textit{Appearance \& Behavior > System Settings > Android \ac{sdk}};
-   \item Na aba \textit{\ac{sdk} Tools}, verifique se existem versões instaladas para \textit{Android SDK Build-Tools 34-rc2}, caso não, instale a correspondente à versão do Android escolhida na criação do emulador ou a do seu dispositivo físico;
-   \item Ainda na aba \textit{\ac{sdk} Tools}, verifique se existe pelo menos uma versão instalada para \textit{Android SDK Command-line Tools}, caso contrário, instale a última versão disponível;
-   \item Ainda na aba \textit{\ac{sdk} Tools}, verifique se o \textit{Android SDK Platform-Tools} está instalado, caso contrário, instale;
-   \item Opcional: Ainda na aba \textit{\ac{sdk} Tools}, verifique se o \textit{Intel x86 Emulator Accelerator (HAXM installer)} está instalado, caso contrário, instale (esta ferramenta melhora a performance do emulador caso seu sistema suporte);
- \end{enumerate}
- 
-\subsection{Instalação do VSCode}\label{ssec:instalacao_vscode}
-É possível seguir com o desenvolvimento no Android Studio, porém ele é um software que exige bastante processamento, o que pode "pesar" no sistema, portanto, existe a possibilidade de utilizar o VSCode\footnote{\label{vscode}VSCode: \url{https://code.visualstudio.com/}} para seguir como software padrão de desenvolvimento, além disso, no VSCode é possível instalar uma grande quantidade de pacotes desenvolvidos pela comunidade que agilizam o desenvolvimento, para utilizar o VSCode basta instalá-lo pela loja do \ac{so}, no caso do Windows, a \textit{Microsoft Store} ou pelo site oficial\footref{vscode}. 
-
-Após instalado e feito a configuração inicial, basta buscar e instalar os \textit{plugins} "Dart" e "Flutter", outros de sua preferência também podem ser instalados. Por fim, basta criar (seguindo o tutorial oficial\footnote{\label{create_app}Escreva seu primeiro aplicativo Flutter: \url{https://docs.flutter.dev/get-started/codelab}}) ou abrir um projeto Flutter já existente e começar a editar seu código.
-
-\subsection{Ferramentas e bibliotecas de suporte}\label{ssec:ferramentas}
-% Descrever as ferramentas e bibliotecas de suporte utilizadas no desenvolvimento, tais como o Visual Studio Code, o Dart DevTools, o Flutter DevTools e as bibliotecas de terceiros que podem ser utilizadas para ajudar no desenvolvimento da aplicação.
-Além dos \acp{ide}, outras ferramentas foram utilizadas para o desenvolvimento do sistema, nesta subseção abordo brevemente cada uma e sua aplicação.
-\subsubsection{Flutter DevTools}\label{sssec:flutter_devtools}
-O DevTools\footnote{\label{dev_tools}DevTools: \url{https://docs.flutter.dev/development/tools/devtools/overview}} é um conjunto de ferramentas de desempenho e depuração para Dart e Flutter, vem integrado na instalação do Flutter e executa automaticamente na inicialização de \textit{debugging}, suas principais funções são:
-
- \begin{enumerate}
-   \item Inspecionamento do layout da interface do usuário e o estado de um aplicativo Flutter;
-   \item Diagnóstico de problemas de instabilidade no desempenho da interface do usuário em um aplicativo Flutter;
-   \item Visualização de informações gerais de \textit{log} e diagnóstico sobre um aplicativo de linha de comando Flutter ou Dart em execução;
-   % \item Entre outras funcionalidades;
- \end{enumerate}
-
-\subsubsection{Postman}\label{sssec:postman}
-O Postman\footnote{\label{postman}Postman: \url{https://www.postman.com/}} é uma ferramenta de teste de \ac{api} que permite aos desenvolvedores testar, documentar e compartilhar suas APIs. Com o Postman, é possível enviar solicitações \ac{http}, verificar as respostas da \ac{api}, criar scripts de teste automatizados e compartilhar coleções de solicitações com outras pessoas. A ferramenta é amplamente utilizada no desenvolvimento de software e pode ser integrada a outras ferramentas, como o Swagger\footnote{\label{swagger}Swagger: \url{https://swagger.io/}}, para tornar o processo de teste e documentação de \acp{api} mais eficiente.
-
-\subsubsection{\textit{Packages} do pub.dev}\label{sssec:pubdev}
-Os \textit{packages} do pub.dev\footnote{\label{pubdev}pub.dev: \url{https://pub.dev/}} são bibliotecas de código-fonte aberto, desenvolvidas por membros da comunidade Flutter, que podem ser utilizadas para implementar recursos em \acp{app} Flutter. Essas bibliotecas fornecem funcionalidades prontas para uso, como a integração com \acp{api}, manipulação de imagens, gerenciamento de estado, entre outras. 
-
-Ao utilizar um \textit{package} do pub.dev, os desenvolvedores podem economizar tempo e esforço na implementação de funcionalidades comuns, além de poderem se beneficiar de contribuições e correções de \textit{bugs} feitas pela comunidade. Os \textit{packages} podem ser facilmente adicionados ao projeto por meio do arquivo \textsc{pubspec.yaml} e instalados por meio do comando \inlinecode{flutter pub get}.
-
-% \subsection{Integrações}\label{ssec:integracoes}
-% Abordar integração com a API do backend, outros serviços e plataformas
-% % é importante descrever os passos necessários para configurar essas integrações, tais como a integração com bancos de dados, serviços de autenticação, serviços de notificação e outros.
-
-% \subsection{Gerenciamento de dependências}\label{ssec:gerenciamento_dependencias}
-% Gerenciamento de dependências: É importante descrever como foram gerenciadas as dependências da aplicação, incluindo as ferramentas utilizadas para gerenciamento de pacotes e bibliotecas, tais como o Pub e o Flutter Packages.
-
-% \subsection{Fluxo de trabalho de desenvolvimento}\label{ssec:fluxo_desenvolvimento}
-% Descrever o fluxo de trabalho utilizado durante o desenvolvimento da aplicação, incluindo a metodologia de desenvolvimento adotada, as ferramentas utilizadas para controle de versão e colaboração entre os desenvolvedores, e os processos de testes e validação da aplicação.
-
-
-% \section{Armazenamento e fornecimento de informações}
-% \lipsum[1]
 
 \section{Sprints}\label{sec:sprint}
 Como foi explicado na seção de \nameref{ssec:metodologias_ageis}, o projeto seguiu duas metodologias que guiaram a criação do \ac{app}, o Scrum e o Kanban, muitas vezes referenciado por profissionais como "Scranban" ou algo semelhante, somente um nome genérico que aponte a junção dessas duas metodologias, portanto, o desenvolvimento do projeto foi dividido em sprints, houve um acordo entre a equipe sobre a flexibilidade das mesmas, visto que todos os envolvidos teriam que alinhar seus horários para a conclusão do projeto, ponderando entre sua vida acadêmica e profissional, o que acarretou em uma maior duração, mas não em menor desempenho ou qualidade, assim, impossibilitando manter uma sprint fixa de 2 a 4 semanas como sugerido pelo \textit{framework} Scrum. 
@@ -240,7 +41,7 @@ Outro dado interessante para a gestão ágil do projeto é o gráfico de eficiê
 
 A seguir serão explicadas brevemente o planejamento, desenvolvimento e resultados obtidos em cada sprint.
 
-\subsection{Sprint 1}\label{ssec:sprint1}
+% \subsection{Sprint 1}\label{ssec:sprint1}
 
 % \subsubsection{Planejamento}\label{sssec:planejamento1}
 Para a primeira sprint, foi planejado o estudo da última versão do protótipo, o desenvolvimento da identidade visual do \ac{app}, incluindo seu ícone/logotipo, o \textit{back-end} tratou de desenvolver o \ac{crud} de usuários, assim como a documentação da \ac{api} que seria acessada pelo \textit{front-end(mobile)}, além disso, houve a configuração inicial dos bancos de dados e servidores para os ambientes de teste e desenvolvimento.
@@ -252,8 +53,8 @@ Nesta primeira sprint não houveram muitos impedimentos, e tudo fluiu dentro do 
 % Como será explicada numa seção mais detalhada a frente, o padrão arquitetural escolhido foi o \ac{mvvm}
 % \subsubsection{Resultados}\label{sssec:resultados1}
 
-\subsection{Sprint 2}\label{ssec:sprint2}
-Nesta segunda sprint foi iniciado o desenvolvimento da tela de \textit{home}, ainda sem integrações, somente para alinhar a estrutura do projeto com a arquitetura escolhida, o \ac{mvvm}, um padrão de arquitetura em \textit{software} que facilita a separação do desenvolvimento da interface gráfica do usuário do desenvolvimento da lógica de negócios ou lógica de \textit{back-end} (o \textit{model}), de modo que a \textit{view} não dependa de nenhuma plataforma de modelo específica.
+% \subsection{Sprint 2}\label{ssec:sprint2}
+Na segunda sprint foi iniciado o desenvolvimento da tela de \textit{home}, ainda sem integrações, somente para alinhar a estrutura do projeto com a arquitetura inicialmente escolhida, o \ac{mvvm}, um padrão de arquitetura em \textit{software} que facilita a separação do desenvolvimento da \ac{ui} – em português, Interface Gráfica do Usuário – do desenvolvimento da lógica de negócios ou lógica de \textit{back-end} (o \textit{model}), de modo que a \textit{view} não dependa de nenhuma plataforma de modelo específica.
 
 \begin{figure}[H]
 \centering
@@ -265,7 +66,7 @@ Nesta segunda sprint foi iniciado o desenvolvimento da tela de \textit{home}, ai
 
 Além disso, foi desenvolvido a classe para requisições \ac{http} no \ac{app}, como também, mais telas foram desenhadas no protótipo de alta fidelidade. Ao fim, foi possível ter uma primeira versão executável do projeto, o qual já estava apto a se conectar à \textit{Web} e fazer requisições na \ac{api} que estava sendo desenvolvida em paralelo. 
 
-\subsection{Sprint 3}\label{ssec:sprint3}
+% \subsection{Sprint 3}\label{ssec:sprint3}
 Os objetivos da terceira sprint foram implementar as telas e realizar as integrações dos \textit{endpoints} desenvolvidos para a \ac{api}, portanto, como resultado, foram contempladas os seguintes requisitos funcionais:
 \begin{itemize}
    \item RF01 - Cadastro de usuário;
@@ -290,160 +91,12 @@ Outro ponto importante é que neste momento já foram adicionadas algumas depend
    \item \textit{shared\_preferences}: Biblioteca utilizada para armazenar dados simples de forma persistente no dispositivo;
  \end{itemize}
 
- Abaixo um trecho da \textit{view} de \textit{Home Page} desenvolvida até este ponto.
+No fim deste arquivo, na seção de Apêndice, em "\nameref{code:home-sprint3}", um trecho da \textit{view} de \textit{Home Page} desenvolvida até este ponto está disponível.
 
-\begin{code}
-\captionof{listing}{Home Page}
-\label{code:dart-code}
-\begin{minted}{dart}
-// imports suprimidos
+Desta forma, adiantando a estrutura para as próximas \textit{features} a serem implementadas e obtendo como resultado um \ac{app} que já tomava o formato desejado, assim, entregando valor com a conclusão da sprint.
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late final HomeController controller;
-  late final ExperimentsController experimentsController;
-  late final TreatmentsController treatmentsController;
-  late final AccountController accountController;
-
-  late List<Widget> _fragments;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = context.read<HomeController>();
-    experimentsController = context.read<ExperimentsController>();
-    treatmentsController = context.read<TreatmentsController>();
-    accountController = context.read<AccountController>();
-    initFragements();
-    if (mounted) {
-      Future.delayed(Duration.zero, () async {
-        await experimentsController.loadExperiments();
-        await treatmentsController.loadTreatments();
-        await accountController.loadAccount();
-      });
-      controller.addListener(() {
-        if (controller.state == HomeState.error) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(controller.failure!.message),
-            ),
-          );
-        }
-      });
-    }
-  }
-
-  initFragements() {
-    _fragments = [
-      ExperimentsPage(
-        homeController: controller,
-      ),
-      TreatmentsPage(
-        homeController: controller,
-      ),
-      AccountPage(
-        homeController: controller,
-      ),
-    ];
-  }
-
-  Widget? get dealWithFloatingActionButton {
-    if (controller.fragmentIndex == 0) {
-      return FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(
-            context,
-            RouteGenerator.createExperiment,
-          );
-        },
-        label: Text(
-          "Cadastrar\nexperimento",
-          style: TextStyles.buttonBackground,
-        ),
-        icon: const Icon(
-          PhosphorIcons.pencilLine,
-          color: AppColors.white,
-          size: 30,
-        ),
-      );
-    }
-
-    if (controller.fragmentIndex == 1) {
-      return FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(
-            context,
-            RouteGenerator.createTreatment,
-          );
-        },
-        label: Text(
-          "Cadastrar\ntratamento",
-          style: TextStyles.buttonBackground,
-        ),
-        icon: const Icon(
-          PhosphorIcons.pencilLine,
-          color: AppColors.white,
-          size: 30,
-        ),
-      );
-    }
-
-    return null;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final controller = context.watch<HomeController>();
-
-    return Scaffold(
-      appBar: AppBar(
-        title: SvgPicture.asset(
-          'assets/images/logo.svg',
-          fit: BoxFit.contain,
-          alignment: Alignment.center,
-        ),
-      ),
-      body: ChangeNotifierProvider(
-        create: (BuildContext context) {},
-        child: _fragments[controller.fragmentIndex],
-      ),
-      floatingActionButton: dealWithFloatingActionButton,
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(PhosphorIcons.flask),
-            label: 'Experimentos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(PhosphorIcons.testTube),
-            label: 'Tratamentos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(PhosphorIcons.userCircleGear),
-            label: 'Conta',
-          ),
-        ],
-        currentIndex: controller.fragmentIndex,
-        selectedItemColor: AppColors.white,
-        backgroundColor: AppColors.primary,
-        onTap: (index) => controller.setFragmentIndex(index),
-      ),
-    );
-  }
-}
-\end{minted}
-\end{code}
-
-Desta forma, adiantando a estrutura para as próximas \textit{features} a serem implementadas e obtendo como resultado um \ac{app} que já tomava o formato desejado, assim, entregando valor com a entrega da sprint.
-
-\subsection{Sprint 4}\label{ssec:sprint4}
-Nesta quarta sprint, os objetivos foram as implementações das telas e integrações dos \textit{endpoints} desenvolvidos que restavam, abrangindo os seguintes requisitos funcionais:
+% \subsection{Sprint 4}\label{ssec:sprint4}
+Já na quarta sprint, os objetivos foram as implementações das telas e integrações dos \textit{endpoints} desenvolvidos que restavam, abrangindo os seguintes requisitos funcionais:
 \begin{itemize}
    \item RF04 - Cadastro de tratamento;
    \item RF06 - Listagem de tratamentos;
@@ -468,7 +121,7 @@ Os testadores receberam um convite por e-mail com um link para fazer o download 
   \label{fig:app_distribution}
 \end{figure}
  
-\subsection{Sprint 5}\label{ssec:sprint5}
+% \subsection{Sprint 5}\label{ssec:sprint5}
 Na quita sprint, o protótipo de alta fidelidade atingiu a maturidade que o projeto necessitava, desta forma o foco de desenvolvimento foi voltado para as implementações das \textit{features} de deletar as entidades que já eram possíveis serem criadas, desta forma, os seguintes requisitos funcionais foram concluídos:
 \begin{itemize}
    \item RF05 - Deletar um tratamento;
@@ -481,7 +134,7 @@ A RF13 foi iniciada nesta sprint, mas não foi concluída, pois a história foi 
 
 Nesta sprint mais requisitos foram concluídos, houveram vários ajustes e correções de \textit{bugs}, como os de fluxos após criação de um experimento, junto disso houveram alguns estudos para uma futura refatoração que será abordada na última sprint, foi notado que o escopo do projeto precisaria de uma arquitetura mais refinada, logo, este tempo foi reservado para estudo junto ao desenvolvimento.  
  
-\subsection{Sprint 6}\label{ssec:sprint6}
+% \subsection{Sprint 6}\label{ssec:sprint6}
 Nesta sexta sprint, os seguintes requisitos funcionais foram atacados:
 \begin{itemize}
    \item RF13 - Utilizar filtros na listagem de experimentos;
@@ -502,35 +155,8 @@ Na \figref{fig:filtros_sprint_6} é possível ver o \textit{dialog} desenvolvido
 Aqui também foi desenvolvido todo o fluxo para visualização dos detalhes de um experimento, o que dá acesso às opções de inserir dados e visualizar os mesmos. Nesta sprint também foi aplicado um estudo de performance feito no \ac{app}, o qual até este momento só carregava os dados após a \textit{splashscreen} (tela antes da home/listagem de experimentos), o que não era o melhor cenário possível, então, após alguns artigos lidos e estudos de caso, a solução encontrada foi de fazer a primeira carga de informações do Enzitech ao \ac{app} ser aberto, ou seja, em sua inicialização, de forma assíncrona, onde, se preciso fosse, a tela de \textit{splashscreen} faria sua responsabilidade, que é de segurar a navegação do usuário até que todos os dados estejam preparados para o uso. 
 
 Desta forma, houve um ganho de performance que diminuiu o tempo de carregamento do \ac{app}, trazendo uma sensação de maior fluidez.
-\hfill \break
-\begin{code}
-\captionof{listing}{Trecho de código para realizar a checagem de autenticação e pré-carregamento dos dados}
-\label{code:dart-code}
-\begin{minted}{dart}
-_checkAuth() async {
-    Future.delayed(Duration.zero).then((_) async {
-    String token = await getToken() ?? '';
 
-    if (!mounted) return;
-
-    if (token.isEmpty) {
-        Navigator.pushReplacementNamed(context, RouteGenerator.auth);
-    } else {
-        await Provider.of<HomeViewmodel>(context, listen: false)
-        .getContent()
-        .then((value) =>
-            Navigator.pushReplacementNamed(
-                context, 
-                RouteGenerator.home,
-            ),
-        );
-      }
-    });
-  }
-\end{minted}
-\end{code}
-
-Como podemos ver no Código Fonte \ref{code:dart-code} o sistema primeiro checa se há algum \textit{token} de autenticação guardado, caso negativo ele segue da \textit{splashscreen} de volta para a tela de \textit{login} para o usuário realizar a autenticação novamente, caso positivo a navegação segue, os dados são pré-carregados e logo após o usuário é levado para a tela inicial do Enzitech.
+Como podemos ver no Código Fonte \nameref{code:check-auth} o sistema primeiro checa se há algum \textit{token} de autenticação guardado, caso negativo ele segue da \textit{splashscreen} de volta para a tela de \textit{login} para o usuário realizar a autenticação novamente, caso positivo a navegação segue, os dados são pré-carregados e logo após o usuário é levado para a tela inicial do Enzitech.
 
 Além disso, foi implementado uma \textit{feature} para lidar com ações sensíveis, como a de exclusão de itens, desta forma, é possível ativar ou desativar nas configurações do \ac{app} um alerta de confirmação de exclusão de experimentos, tratamentos e enzimas, o qual, além deste passo de segurança implementado, oferece outra funcionalidade, independente desta anterior estar ativada ou não, que é a de desfazer ações destrutivas, ou seja, o usuário pode se arrepender da exclusão (ou tê-la feito por engano) e recuperar esta informação, assim, oferecendo um passo de segurança a mais para os dados, abaixo na \figref{fig:fluxo_exclusao} é possível ver sua aplicação em um tratamento.
 
@@ -546,8 +172,8 @@ Além disso, foi implementado uma \textit{feature} para lidar com ações sensí
 
 \end{figure}
 
-\subsection{Sprint 7}\label{ssec:sprint7}
-Na sétima e última sprint do projeto o projeto houve uma enorme refatoração de arquitetura, como comentado na subseção \ref{ssec:sprint4}, aqui, além dessa refatoração que não adiciona funcionalidades, mas garante a estabilidade do \ac{app} e permite que o mesmo possa receber novas funcionalidades de forma mais fácil e sem problemas, houve a conclusão dos requisitos funcionais restantes, são eles:
+% \subsection{Sprint 7}\label{ssec:sprint7}
+Na sétima e última sprint do projeto o projeto houve uma enorme refatoração de arquitetura, como comentado anteriormente, aqui, além dessa refatoração que não adiciona funcionalidades, mas garante a estabilidade do \ac{app} e permite que o mesmo possa receber novas funcionalidades de forma mais fácil e sem problemas, houve a conclusão dos requisitos funcionais restantes, são eles:
 \begin{itemize}
    \item RF16 - Visualização de resultados discrepantes do cálculo enzimático antes de salvar no experimento;
    \item RF17 - Edição de resultados discrepantes do cálculo enzimático antes de salvar no experimento;
@@ -556,37 +182,128 @@ Na sétima e última sprint do projeto o projeto houve uma enorme refatoração 
    \item RF20 - Exportação dos resultados do experimento;
  \end{itemize}
 
-[EM DESENVOLVIMENTO até 31/03/23]
+ Nesta refatoração foi aplicado o conceito de Arquitetura Limpa proposto pelo Uncle Bob, que já foi explicado no capítulo de \nameref{chp:teoria} e será aprofundada na seção \nameref{sec:arquitetura} deste capítulo, assim como houve a troca de alguns pacotes do aplicativo, portanto, com a aplicação da arquitetura limpa, foi possível isolar os pacotes adicionados ao projeto utilizando contratos/interfaces para abstrair sua implementação, permitindo uma troca mais fácil, caso necessário, no futuro... A estrutura do projeto ficou da seguinte forma:
+
+ \begin{figure}[H]
+\centering
+  \includegraphics[width=0.85\columnwidth]{images/estrutura_app_final.png}
+  \caption{Estrutura final do aplicativo em Flutter para o Enzitech}
+  \acsfont{Fonte: Autoria própria}
+  \label{fig:estrutura_app_final}
+\end{figure}
+
+Sintetizando toda essa estrutura, temos a separação dos requisitos funcionais baseadas em \textit{features}, como mostrado na \figref{fig:estrutura_app_final}, tudo relacionado a enzimas no aplicativo está na \textit{feature "enzyme"}, são elas: as telas, \textit{widgets} e os \textit{ViewModels} de cadastrar, deletar e obter listagem das enzimas, isto para a camada de \textit{Presentation}, seguindo o que a arquitetura exige, na camada de \textit{Domain} estão as entidades, interfaces e implementações dos Casos de Uso e a interface para os Repositórios, por fim, na camada de \textit{Data} estão o restante das classes necessárias para concluir uma \textit{feature}, são as interfaces e implementações do \textit{DataSource}, as implementações dos Repositórios e os \acp{dto}, que fazem a conversão dos dados externos para uma entidade interna do aplicativo. Além desse escopo, estão na pasta denominada \textit{core} todas as implementações para os arquivos estruturais do \ac{app}, como as rotas, as injeções de dependência, falhas, entre outros, já na pasta \textit{shared}, como o nome já diz, estão todos os outros arquivos e implementações para os utensílios em comum do \ac{app}, como os \textit{widgets} comuns a todo o sistema, as configurações do \textit{design-system}, \textit{validators}, \textit{extensions}, dentre outros.
+
+O \textit{back-end} também teve seus ajustes finais para disponibilizar todas as \acp{api} de acordo com o que o app esperava e como os requisitos funcionais pediam, portanto, todo o sistema do Enzitech ficou pronto para ser utilizado ao final desta sprint.
 
 \section{Back-end}
-O back-end do projeto foi desenvolvido pelo BCCCoworking, Laboratório de Pesquisa e Desenvolvimento, concebido no curso de Ciência da Computação da \ac{ufape}, sendo assim, nesta seção trago detalhes resumidos de sua implementação e como ele está ligado ao \ac{app}, já que o mesmo faz parte de todo o projeto do sistema Enzitech.
+Como já abordado, o sistema foi feito juntamente com o \nameref{sec:lab}, portanto, a parte encarregada do mesmo foi o desenvolvimento do \textit{back-end} que forneceria uma \ac{api} para o aplicativo consumir, sendo assim, nesta seção trago detalhes resumidos de sua implementação e como ele está ligado ao \ac{app}.
 
-[EM DESENVOLVIMENTO até 31/03/23]
+O \textit{back-end} é responsável por gerenciar as solicitações feitas pelo cliente (\ac{app}), manipulá-las, e realizar as operações necessárias no Banco de Dados, inclusive, é no \textit{back-end} onde os cálculos são realizados, retirando a responsabilidade do cliente de realizar possíveis grandes quantidades de cálculo, podendo desencadear problemas de performance no aplicativo a depender do dispositivo em que o \ac{app} está sendo executado, além disso, manter estas responsabilidades no \textit{back-end} permite que outros clientes possam realizar as mesmas coisas, bastando apenas a consulta em sua \ac{api}, evitando reescrita de código.
 
-\section{Banco de Dados}
-Descrever o Banco de Dados.
-[EM DESENVOLVIMENTO até 31/03/23]
+O \textit{back-end} foi feito totalmente em TypeScript utilizando o Nest.js (\textit{framework back-end} que auxilia o desenvolvimento de aplicações eficientes, escaláveis e confiáveis), o qual, ao ser executado, fornece uma \ac{api} acessível através de uma \ac{url} específica para clientes/dispositivos acessarem suas funcionalidades.
 
-\section{Fluxo de informações}
-Descrever a comunicacao entre backend e app.
-[EM DESENVOLVIMENTO até 31/03/23]
+\section{Modelagem dos dados}
+Assim como o \textit{back-end}, a configuração do Banco de Dados foi responsabilidade dos desenvolvedores envolvidos do \nameref{sec:lab}, porém, a fase de modelagem dos dados é de suma importância também para o \ac{app}, pois influencia no desenvolvimento do mesmo, sendo assim, houve uma integração multidisciplinar entre as equipes para esta fase, foi criado um modelo lógico para organizar a camada de dados de todo o sistema, incluindo atributos e relacionamentos de entidades. Esse modelo foi utilizado como guia para o desenvolvimento do Enzitech, utilizando ferramentas para construção do diagrama de entidade-relacionamento.
 
-\section{Arquitetura do sistema}\label{ssec:arquitetura}
-Descrever o processo de desenho da arquitetura do aplicativo.
+\subsection{Diagrama de Entidade-Relacionamento}
+O Diagrama Entidade-Relacionamento (ER) é uma ferramenta de modelagem utilizada para representar entidades, seus atributos e relacionamentos em um sistema de banco de dados. Ele é composto por elementos gráficos como entidades, atributos e relacionamentos, que são utilizados para representar objetos do mundo real e suas interações.
 
-% \section{Comunicação por API}
-% Descrever o processo de comunicacao com a api.
-% [EM DESENVOLVIMENTO até 31/03/23]
+% 
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=\columnwidth]{images/er.jpg}
+  \caption{Diagrama de Entidade-Relacionamento do Enzitech}
+  \acsfont{Fonte: DBeaver\footref{dbeaver}}
+  \label{fig:der}
+\end{figure}
+
+Através da modelagem com o diagrama ER, é possível criar um modelo lógico para o banco de dados, abstraindo as características específicas da tecnologia a ser utilizada, facilitando a implementação do modelo físico do banco de dados. Na \figref{fig:der} é possível ver como ficou o diagrama ER do Enzitech, após consulta do mesmo no software para gerenciamento de banco de dados, DBeaver\footnote{\label{dbeaver}DBeaver: \url{https://dbeaver.com/docs/wiki/ER-Diagrams/}}.
+
+\section{Arquitetura do sistema}\label{sec:arquitetura}
+A Arquitetura do sistema por completo pode ser considerada uma arquitetura híbrida, pois a mesma utiliza princípios de quatro padrões arquiteturais, sendo eles:
+
+\begin{enumerate}
+   \item \ac{mvvm}: Arquitetura de \ac{ui} para evitar o acoplamento das camadas de \acp{ui} das de negócios;
+   \item Cliente-Servidor: Arquitetura para comunicação entre o \textit{front-end} e o \textit{back-end}/\ac{api};
+   \item Monolítico: Arquitetura em que todo o sistema é desenvolvido em um único bloco de código, uma só instancia que gerencia todos os estados da aplicação, sem divisão clara de módulos ou serviços;
+   \item Arquitetura Limpa: Arquitetura com o foco em promover a implementação de sistemas que favorecem reusabilidade de código, coesão, independência de tecnologia e testabilidade;
+ \end{enumerate}
+
+O \textit{back-end} gerencia todas as solicitações feitas pelo \ac{app}, manipulando os dados por meio de operações \ac{crud} em uma instância de banco de dados Postgresql\footnote{\label{postgresql}Postgresql: \url{https://www.postgresql.org/}}.
+
+A comunicação entre o cliente e o \textit{back-end} é estabelecida por meio de requisições \ac{http}, que são processadas pela \ac{api} do \textit{back-end} e resultam em respostas adequadas, formatadas em \ac{json}. O cliente, por sua vez, é responsável por exibir as informações ao usuário final e coletar as interações do usuário para posteriormente enviar ao \textit{back-end}.
+
+A arquitetura adotada busca garantir a escalabilidade e a segurança do sistema, bem como a facilidade de manutenção. O \textit{back-end} é projetado seguindo os padrões RESTful (capacidade de determinado sistema aplicar os princípios de \ac{rest}), o que permite a integração com outros sistemas e garante a interoperabilidade. O uso do Postgresql\footref{postgresql} como banco de dados permite a manipulação de grandes volumes de dados e garante a consistência dos dados armazenados. Além disso, a utilização de boas práticas de segurança, como a autenticação e autorização de usuários, garante que apenas usuários autorizados possam acessar os dados do sistema.
+
+Por fim, a arquitetura do sistema é projetada para atender às necessidades do cliente \textit{mobile}, oferecendo uma experiência de usuário agradável e uma interface responsiva, que garante o bom desempenho do \ac{app}. A seguir, serão destrinchadas as arquiteturas do aplicativo e da infraestrutura do sistema.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=0.9\columnwidth]{images/clean_dart.png}
+  \caption{Camadas de uma Arquitetura Limpa}
+  \acsfont{Fontes: \cite{martin2018arquitetura} e \cite{flutterando_clean_dart}}
+  \label{fig:clean_dart}
+\end{figure}
+
+Como apontado por \cite{martin2018arquitetura}, uma arquitetura deve conter pelo menos estas quatro camadas principais e independentes para ser considerada “limpa”:
+\begin{itemize}
+   \item \textbf{Regras de Negócio Corporativas:} As entidades são modelos de dados que representam as regras de negócio mais importantes de um sistema e estão no topo das camadas. Elas devem ser puras, não conhecendo nenhuma outra camada, mas são conhecidas pelas outras camadas;
+   \item \textbf{Regras de Negócio da Aplicação:} Os casos de uso representam as ações que um usuário pode fazer na aplicação. Os casos de uso conhecem apenas as entidades, não sabendo sobre as implementações de camadas de baixo nível. Se precisarem acessar uma camada superior, devem fazê-lo por meio de contratos definidos por interfaces, seguindo o Princípio de Inversão de Dependências do SOLID;
+   \item \textbf{Adaptadores de Interface:} Camada responsável por auxiliar as Regras de Negócios, convertendo os dados externos em um formato que atenda aos contratos de interface definidos por ela;
+   \item \textbf{Frameworks \& Drivers (Externos):} Abstrações feitas para aumentar a facilidade da conexão dos artefatos externos como um banco de dados, protocolo de requisições web ou uma interface gráfica, facilitando a troca sem alterar o comportamento do sistema;
+ \end{itemize}
+
+ Desta forma, a aplicação da arquitetura limpa sugerida no Flutter/Dart pela comunidade \cite{flutterando_clean_dart} segue o fluxo da \figref{fig:clean_dart2} a seguir:
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=0.8\columnwidth]{images/clean_dart2.png}
+  \caption{Sugestão da estrutura das camadas de uma Arquitetura Limpa no Flutter}
+  \acsfont{Fonte: \cite{flutterando_clean_dart}}
+  \label{fig:clean_dart2}
+\end{figure}
+
+Para aplicação \textit{mobile} desenvolvida, esta proposta de arquitetura foi abstraída em três camadas maiores, mas seguindo o padrão e as peculiaridades da proposta acima, sendo assim, a arquitetura seguiu com as seguintes camadas:
+
+\begin{itemize}
+   \item \textbf{Presentation:} Camada responsável por declarar as entradas, saídas e interações da aplicação. onde ficarão os \textit{Widgets}, \textit{Pages}, \textit{ViewModels} das respectivas \textit{Pages} e também a Gerência de Estado;
+   \item \textbf{Domain:} Camada que hospeda as Entidades (Regras de Negócio Corporativa), os Casos de Uso (Regras de Negócio da Aplicação) e os contratos dos Repositórios (a responsabilidade de implementação desse objeto é repassado para outra camada mais baixa), fazendo com que esta camada seja responsável apenas pela execução da lógica de negócio, não havendo implementações de outros objetos fora da mesma;
+   \item \textbf{Data:} Camada que dá suporte à camada Domain, implementando suas interfaces. Para isso, adapta os dados externos para que possa cumprir os contratos do domínio. Nesta camada é possível implementar alguma interface de um Repositório ou Serviço que pode ou não depender de dados externos como uma \ac{api} ou acesso a algum \textit{Hardware} como por exemplo GPS. Para que o Repositório possa processar e adaptar os dados externos foram criados contratos para esses serviços visando passar a responsabilidade de implementação para a camada mais baixa dessa arquitetura: o DataSource, esta camada interna em Data permite acessar um dado externo, como a \ac{api} do Enzitech ou um Cache Local usando \textit{SharedPrefs} por exemplo, como há uma redução de camadas, é aqui onde os acessos externos são implementados seguindo o mesmo padrão de contratos como acontece entre Domain e Data, realizado na aplicação fora das camadas de \textit{features} que possuem a mesma estrutura, assim, ainda preservando a separação de responsabilidades e tornando os pacotes externos desacoplados da nossa aplicação, como deve ser na arquitetura limpa;
+ \end{itemize}
+
+Para concluir, um exemplo abaixo da arquitetura de toda a infraestrutura do Enzitech:
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=\columnwidth]{images/arquitetura_enzitech.png}
+  \caption{Arquitetura simplificada da infraestrutura do Enzitech}
+  % \acsfont{Fonte: DBeaver\footref{dbeaver}}
+  \label{fig:arquitetura_enzitech}
+\end{figure}
+
+A arquitetura da aplicação ilustrada na \figref{fig:arquitetura_enzitech} foi desenvolvida baseado na proposta de arquitetura de \cite{martin2018arquitetura}, também do seu livro sobre \nameref{sec:arquitetura_limpa}, arquitetura esta que é separada em camadas, com o objetivo de simplificar a codificação, possibilitando sua manutenção e atualização de forma prática, reduzindo a dependência do código. Com base nesta arquitetura descrita, é possível destacar alguns pontos adicionais:
+
+\begin{itemize}
+   \item O aplicativo \textit{mobile} é responsável por fornecer uma interface de usuário amigável e eficiente para interação com o sistema. Isso inclui a exibição de informações, a coleta de dados de entrada e a navegação entre diferentes telas e funcionalidades;
+   % \item A \ac{api} do \textit{back-end} é projetada seguindo os padrões RESTful, que define um conjunto de práticas recomendadas para a criação de serviços web. Isso inclui o uso de métodos \ac{http} (GET, POST, PUT, DELETE) para manipulação de recursos, a definição de \acp{url} consistentes para acesso aos recursos e o uso de formatos de dados padronizados no formato \ac{json} para comunicação entre o cliente e o servidor;
+   % \item O \textit{back-end} é responsável por realizar as operações de \ac{crud} no banco de dados, garantindo a integridade dos dados armazenados. Isso inclui a validação de dados de entrada, a realização de consultas e atualizações no banco de dados e a manipulação de erros e exceções;
+   % \item A utilização de boas práticas de segurança é essencial para garantir a integridade e a confidencialidade dos dados do sistema. Isso inclui a implementação de autenticação e autorização de usuários, o uso de criptografia para proteção de dados sensíveis, a realização de backups periódicos do banco de dados e a adoção de medidas de prevenção contra ataques e invasões;
+   \item A escalabilidade do sistema é uma preocupação importante, uma vez que o número de usuários e a quantidade de dados podem crescer significativamente ao longo do tempo. Para garantir a escalabilidade, é possível adotar soluções como a utilização de servidores em nuvem, a implementação de técnicas de cache e a otimização de consultas no banco de dados;
+   \item A arquitetura do sistema foi projetada para facilitar a manutenção e o desenvolvimento de novas funcionalidades. Isso inclui a utilização de padrões de codificação consistentes, a documentação adequada do código-fonte e a realização de testes unitários e de integração para garantir a qualidade do software;
+ \end{itemize}
 
 \section{Testes}
-Descrever o processo de testes da aplicação móvel, incluindo os tipos de testes realizados, como testes funcionais e de desempenho.
-[EM DESENVOLVIMENTO até 31/03/23]
+Antes de ser implantado, o aplicativo foi testado em suas \textit{releases} pela equipe interna do Enzitech, além disso, no desenvolvimento, foram utilizados técnicas de teste, como integração, aceitação e de unidade, no fim deste arquivo, no capítulo \nameref{ch:testes} é possível verificar esta etapa.
+
+Dentro da seção "\nameref{code:teste-unidade-enzima}", é possível ver um exemplo de teste de unidade escrito na linguagem de programação Dart, usando o \textit{framework} de testes padrão do Flutter, o teste é uma função anônima (sem nome) que verifica se a instância da classe \textit{EnzymeEntity} não é nula. O nome do teste é \textit{"Should not return null on Enzyme entity"}.
+
+Dentro do corpo da função, é criada uma nova instância da classe \textit{EnzymeEntity} e atribuída à variável \textit{enzyme}. O construtor da classe \textit{EnzymeEntity} é chamado com argumentos específicos para inicializar as propriedades da instância. Em seguida, é usada a função \textit{expect()} do \textit{framework} de teste para verificar se a instância da classe \textit{EnzymeEntity} criada anteriormente não é nula. Se a expectativa for cumprida, o teste passa. Caso contrário, o teste falha.
+
+Este teste serve como uma verificação básica para garantir que a classe \textit{EnzymeEntity} esteja sendo inicializada corretamente e não esteja retornando um valor nulo.
 
 \section{Implantação}
-Descrever o processo de implantação da aplicação móvel, implantação do backend e do BD na ufape, como o app muda com isso, incluindo a distribuição nas lojas de aplicativos, atualizações e manutenção.
-[EM DESENVOLVIMENTO até 31/03/23]
+O \textit{back-end} e o banco de dados do sistema Enzitech foram implantados na infraestrutura da \ac{ufape}, utilizando-se dos recursos de processamento e armazenamento disponibilizados pela instituição. A \ac{api} desenvolvida para o projeto foi disponibilizada através de uma rota pública, permitindo o acesso aos dados e funcionalidades do sistema a partir do aplicativo desenvolvido para os usuários finais. A escolha pela hospedagem na infraestrutura da \ac{ufape} teve como objetivo garantir a segurança, estabilidade e escalabilidade da aplicação, além de possibilitar a utilização de recursos computacionais locais e adequados para as necessidades do projeto.
 
-
-% \subsection{Subsection}
-
-% \lipsum[1]
+O aplicativo móvel foi projetado para alterar facilmente entre os ambientes de desenvolvimento, teste ou produção, desta forma, em sua versão final, o \ac{app} foi distribuído internamente via \textit{Firebase App Distribution}, porém sendo possível também a sua publicação na \textit{Google Play Store}, loja de \acp{app} do Android. 

@@ -1,3 +1,6 @@
+== Version 2.0
+* Version directed to the Universidade Federal do Agreste de Pernambuco (UFAPE)
+
 == Version 1.5
 
 * Fixing the translation of "List of Tables" and "List of Figures" to portuguese.

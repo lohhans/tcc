@@ -1,7 +1,7 @@
 # Trabalho de Conclusão de Curso - Graduação em [Ciência da Computação](http://bcc.ufape.edu.br/) da [Universidade Federal do Agreste de Pernambuco](http://ufape.edu.br/)
 
 ## Template do Documento
-Este Trabalho pode ser utilizado como template para Trabalhos de Conclusão de Curso (TCC) na [Universidade Federal do Agreste de Pernambuco](http://ufape.edu.br/) (UFAPE) em formato Latex.
+Este Trabalho pode ser utilizado como template para Trabalhos de Conclusão de Curso (TCC) na [Universidade Federal do Agreste de Pernambuco](http://ufape.edu.br/) (UFAPE) em formato Latex, deve ser editado preferencialmente no [Overleaf](https://www.overleaf.com/).
 
 Disponibilizado pelos docentes da instituição acima citada e adaptado com as informações mais recentes por mim, Armstrong Lohãns, discente concluinte do curso de [Ciência da Computação](http://bcc.ufape.edu.br/) (BCC).
 

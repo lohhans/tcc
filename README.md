@@ -6,7 +6,7 @@ Este Trabalho pode ser utilizado como template para Trabalhos de Conclusão de C
 Disponibilizado pelos docentes da instituição acima citada e adaptado com as informações mais recentes por mim, Armstrong Lohãns, discente concluinte do curso de [Ciência da Computação](http://bcc.ufape.edu.br/) (BCC).
 
 ## Enzitech - Sistema de experimentos para cálculo de atividades enzimáticas do solo
-![👋 Olá! (1)](https://user-images.githubusercontent.com/30741312/232361196-5d8dc1ca-6b6c-41df-8cc7-131cdba98591.png)
+![Enzitech](https://github.com/bcccoworkingufape/enzitech_app/assets/30741312/febe6481-6e75-4727-9aed-ce35601736e4)
 
 ## Objetivo Geral
 Este trabalho tem como objetivo detalhar a solução e o processo de desenvolvimento de uma aplicação para dispositivos móveis que informatize o método de fazer experimentos e análises do solo, aplicativo este desenvolvido usando padrões arquiteturais limpos, escaláveis, manuteníveis e testáveis.

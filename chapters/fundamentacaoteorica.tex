@@ -1,42 +1,41 @@
 \chapter{Fundamentação Teórica}\label{ch:teoria}
-Neste capítulo serão levantados dados sobre a necessidade de meios para combater a escassez global da produção de alimentos, sendo abordados detalhes técnicos da área de atuação deste \textit{software}, que é voltado à pesquisas e experimentos na área da Agronomia, sobre a qualidade do solo e suas atividades enzimáticas para um melhor aproveitamento do solo na produção de alimentos. Além disso, serão discutidos pontos referentes ao crescimento da mobilidade no Brasil e no mundo, trazendo o contexto da solução apresentada por este projeto, bem como conceitos técnicos relacionados aos dispositivos móveis, desenvolvimento de \textit{software}, metodologias ágeis e arquitetura do sistema.
+Neste capítulo, serão levantados dados sobre a necessidade de meios para combater a escassez global da produção de alimentos, sendo abordados detalhes técnicos da área de atuação deste \textit{software}, que é voltado à pesquisas e experimentos na área da Agronomia, sobre a qualidade do solo e suas atividades enzimáticas para um melhor aproveitamento do solo na produção de alimentos. Além disso, serão discutidos pontos referentes ao crescimento da mobilidade no Brasil e no mundo, trazendo o contexto da solução apresentada por este projeto, bem como conceitos técnicos relacionados aos dispositivos móveis, desenvolvimento de \textit{software}, metodologias ágeis e arquitetura do sistema.
 
 \section{Qualidade do solo}\label{sec:qualidade_solo}
 A \ac{qs} é um dos fatores fundamentais para o aumento da produtividade agrícola e, consequentemente, para a redução da escassez global de alimentos. Segundo a \ac{fao}, cerca de um terço dos solos do mundo estão degradados devido a práticas agrícolas insustentáveis e outros fatores como poluição, erosão, compactação e perda de matéria orgânica. Além disso, a \ac{onu}\footnote{\ac{onu} - População: \url{https://www.un.org/en/global-issues/population}} estima que a população mundial chegará a 9,7 bilhões em 2050, o que exigirá um aumento de 70\% na produção de alimentos para suprir a demanda crescente \citet{fao2018future}.
 
 Nesse contexto, é fundamental entender a \ac{qs}, suas características físicas, químicas e biológicas, bem como as interações entre esses fatores. Isso permitirá o desenvolvimento de técnicas mais eficientes e sustentáveis de manejo do solo, contribuindo para a melhoria da produtividade agrícola e, consequentemente, para a redução da escassez global de alimentos.
 
-Desta forma, trazendo o problema para o escopo do Brasil, surge a necessidade de conciliar nossa produção agrícola com a preservação ambiental, e isso têm despertado a atenção da comunidade científica e os produtores para a necessidade de associar produtividade e formas mais sustentáveis de produção \citet{lopez2019carbon}. Com este objetivo, as medidas da \ac{ndc} acordada pelo Brasil com a Convenção Quadro das Nações Unidas sobre mudanças climáticas, incluem como estratégia o fortalecimento do \ac{planoabc} através do desenvolvimento sustentável na agricultura até 2030 \citet{embrapa_visao_2030}.
+Desta forma, trazendo o problema para o escopo do Brasil, surge a necessidade de conciliar nossa produção agrícola com a preservação ambiental, e isso têm despertado a atenção da comunidade científica e os produtores para a necessidade de associar produtividade e formas mais sustentáveis de produção \citet{lopez2019carbon}. Com este objetivo, as medidas da \ac{cnd} acordada pelo Brasil com a Convenção Quadro das Nações Unidas sobre mudanças climáticas, incluem como estratégia o fortalecimento do \ac{planoabc} através do desenvolvimento sustentável na agricultura até 2030 \citet{embrapa_visao_2030}.
 
 \section{Cálculo de atividades enzimáticas do solo}\label{sec:calculo_enzimatico}
-Diversos métodos são utilizados para avaliar a qualidade do solo, como a análise físico-química, a análise microbiológica e a análise das \acp{ae} do solo. Esta última pode ser utilizada como uma medida da atividade biológica do solo, pois as enzimas são produzidas pelos micro-organismos presentes no solo e são essenciais para a decomposição da matéria orgânica, a liberação de nutrientes e a formação de compostos benéficos para as plantas.
+Diversos métodos são utilizados para avaliar a qualidade do solo, como a análise físico-química, a análise da comunidade microbiana do solo e a \ac{ae} do solo. Esta última pode ser utilizada como uma medida da atividade biológica do solo, pois as enzimas são produzidas pelos microrganismos presentes no solo e são essenciais para a decomposição da matéria orgânica, a liberação de nutrientes e a formação de compostos benéficos para as plantas.
 
-O cálculo de \acp{ae} do solo é uma importante ferramenta para avaliar a qualidade e saúde do solo, uma vez que a atividade enzimática está diretamente relacionada com a quantidade e diversidade de microrganismos presentes no solo. Alguns exemplos de enzimas comumente utilizadas para esse cálculo são a fosfatase ácida, a $\beta$-glucosidase, a urease e a protease. A atividade dessas enzimas pode ser afetada por vários fatores, como o pH do solo, a umidade, a temperatura e a presença de metais pesados. Portanto, a análise das \acp{ae} do solo é importante para identificar possíveis impactos ambientais e planejar práticas de manejo sustentável.
+O cálculo de \acp{ae} do solo é uma importante ferramenta para avaliar a qualidade e saúde do solo, uma vez que a atividade enzimática está diretamente relacionada com a quantidade e diversidade de microrganismos presentes no solo. Alguns exemplos de enzimas que respondem quanto a qualidade do solo são a fosfatase ácida, a $\beta$-glucosidase, a urease e a protease. A atividade dessas enzimas pode ser afetada por vários fatores, como o pH do solo, a umidade, a temperatura e a presença de metais pesados. Portanto, a análise das \acp{ae} do solo é importante para identificar possíveis impactos ambientais e planejar práticas de manejo sustentável \cite{agrogalaxy}.
 
 % Existem diversas metodologias para o cálculo dessas \acp{ae}, incluindo ensaios espectrofotométricos, cromatográficos e fluorimétricos. Além disso, é importante considerar fatores como a temperatura e pH ideais para cada enzima, bem como a influência de diferentes tipos de solo e uso da terra na \ac{ae}.
 
-Entre as referências bibliográficas relevantes para o estudo de \acp{ae} em solo, podemos citar o trabalho de \citet{tabatabai1969use}, que desenvolveram uma metodologia para a determinação de fosfatase ácida em solo; o estudo de \citet{allison2010measurement}, que comparou diferentes metodologias para a medição da \ac{ae} em solos de diferentes ecossistemas; e o trabalho de \citet{sinsabaugh2008stoichiometry}, que avaliou a influência da qualidade do substrato e da umidade do solo na atividade enzimática.
+Entre as referências bibliográficas relevantes para o estudo de \acp{ae} em solo, podemos citar o trabalho de \citet{tabatabai1969use}, que desenvolveram uma metodologia para a determinação de fosfatase ácida em solo; o estudo de \citet{ribeiro2019atividade}, que avaliou a atividade das enzimas fosfatase ácida e alcalina e $\beta$-glicosidase como indicadores da qualidade do solo em uma área de plantio da Embrapa Milho e Sorgo, destacando diferenças entre o solo cultivado e o solo de cerrado natural, sugerindo a necessidade de práticas de manejo para recuperação biológica do solo; o estudo de \citet{allison2010measurement}, que comparou diferentes metodologias para a medição da \ac{ae} em solos de diferentes ecossistemas; e o trabalho de \citet{sinsabaugh2008stoichiometry}, que avaliou a influência da qualidade do substrato e da umidade do solo na atividade enzimática.
 
 \section{Mobilidade}\label{sec:mobilidade}
 Segundo \citet{b2004mobile}, um sistema de computação móvel é um sistema que pode ser facilmente movido fisicamente ou cuja funcionalidade pode ser usada durante o movimento. Como esses sistemas fornecem essa mobilidade, essas funcionalidades adicionadas são a razão para caracterizar separadamente os sistemas de computação móvel, eles geralmente oferecem capacidades e recursos não encontrados em sistemas normais, como: 
  \begin{itemize}
    \item Armazenamento de dados local e/ou remoto via conexões com ou sem fio;
    \item Segurança para persistência de dados em caso de queda de energia ou pane;
-   \item Sincronização de dados com outros sistemas;
-   \item Etc.
+   \item Sincronização de dados com outros sistemas.
  \end{itemize}
 
 Atualmente, pensamos em um sistema móvel como um sistema projetado para rodar em um computador de mão, seja ele celular, tablet ou qualquer outro dispositivo com tais características. Pela definição acima, os notebooks também são considerados plataformas para sistemas móveis, mas não são utilizados exatamente da mesma forma que os dispositivos citados acima, pois é necessário parar em algum lugar, abrir o notebook, esperar carregar, etc...
 
 \section{Dispositivos móveis}\label{sec:dm}
-Para adentrar no universo da solução apresentada, os \acp{dm}, é valioso abordar como estes \textit{gadgets} lidam com a capacidade de armazenamento e processamento de dados, que, por possuírem sistemas móveis espera-se que os mesmos possuam menor eficiência para desenvolver atividades se comparados a um computador estacionário (\ac{pc}), por exemplo, que possui muito mais disponibilidade energética para realizar suas tarefas, porém, nos dias de hoje esse \textit{gap} para atividades cotidianas está mais estreito, devido aos grandes avanços da tecnologia voltados a este segmento que vem em forte alta — o qual, segundo \citet{data.ai} cresceu 20\% em 2020 comparado ao ano anterior, gerando um consumo no valor de 143 bilhões de dólares no mundo todo, somente com \acp{app} para \acp{dm}, mesmo com as dificuldades enfrentadas pela pandemia da COVID-19, vale ressaltar que há uma expectativa que o mercado de \acp{dm} cresça ainda mais nos próximos cinco anos, com uma \ac{cagr} de 4\% no período de previsão de 2023 a 2028 — de acordo com a projeção de \cite{intelligence_2023} (veja a \figref{fig:smartphones-market_Market_Summary} abaixo). 
+Para adentrar no universo da solução apresentada, os \acp{dm}, é valioso abordar como estes \textit{gadgets} lidam com a capacidade de armazenamento e processamento de dados, que, por possuírem sistemas móveis espera-se que os mesmos possuam menor eficiência para desenvolver atividades se comparados a um computador estacionário (\ac{pc}), por exemplo, que possui muito mais disponibilidade energética para realizar suas tarefas, porém, nos dias de hoje esse \textit{gap} para atividades cotidianas está mais estreito, devido aos grandes avanços da tecnologia voltados a este segmento que vem em forte alta — o qual, segundo \citet{data.ai} cresceu 20\% em 2020 comparado ao ano anterior, gerando um consumo no valor de 143 bilhões de dólares no mundo todo, somente com \acp{app} para \acp{dm}, mesmo com as dificuldades enfrentadas pela pandemia da COVID-19, vale ressaltar que há uma expectativa que o mercado de \acp{dm} cresça ainda mais nos próximos cinco anos, com uma \ac{cagr} de 4\% no período de previsão de 2023 a 2028 — de acordo com a projeção de \cite{intelligence_2023}, como mostra a \figref{fig:smartphones-market_Market_Summary}. 
 
 Já para processamentos mais robustos estamos caminhando em largos passos, atualmente é possível se deparar com sistemas móveis utilizando o processamento em nuvem (que são outra forma de representação de sistema estacionários, um exemplo disso são os servidores computacionais) para tais atividades, ao mesmo tempo em que outros \acp{dm} já contam com \textit{chipsets} dedicados para isso — como dispositivos com processadores com núcleos desenvolvidos exclusivamente ao processamento de \ac{am} e \ac{ia}, por exemplo.
 
 \begin{figure}[h]
 \centering
-  \includegraphics[width=\columnwidth/3]{images/smartphones-market_Market_Summary.png}
-  \caption{Mercado de Smartphones - crescimento, tendências, impacto da COVID-19 e previsões (2023 - 2028)}
+  \includegraphics[width=\columnwidth/3]{images/smartphones-market_Market_Summary.pdf}
+  \caption{Mercado de Smartphones - crescimento, tendências, impacto da COVID-19 e previsões (2023 - 2028).}
   \acsfont{Fonte: \cite{intelligence_2023}}
   \label{fig:smartphones-market_Market_Summary}
 \end{figure}
@@ -51,8 +50,8 @@ De acordo com \citet{laricchia_2022}, em 2021, o número de \acp{dm} operando em
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/mobiles20to25.png}
-  \caption{Previsão do número de dispositivos móveis em todo o mundo de 2020 a 2025 (em bilhões)}
+  \includegraphics[scale=0.35]{images/mobiles20to25.pdf}
+  \caption{Previsão do número de dispositivos móveis em todo o mundo de 2020 a 2025 (em bilhões).}
   \acsfont{Fonte: \citet{laricchia_2022}}
   \label{fig:mobiles20to25}
 \end{figure}
@@ -75,14 +74,14 @@ Segundo \cite{stats2020mobile}, como mostrado nos gráficos das \figref{fig:mobi
 \begin{figure}[H]
 \centering
 \begin{subfigure}{\textwidth}
-   \includegraphics[width=1\linewidth]{images/mobile_operating_system_market_share_w.png}
-   \caption{Participação no mercado de Sistemas Operacionais móveis em todo o mundo}
+   \includegraphics[width=1\linewidth]{images/mobile_operating_system_market_share_w.pdf}
+   \caption{Participação no mercado de Sistemas Operacionais móveis em todo o mundo.}
    \acsfont{Fonte: \cite{stats2020mobile}}
    \label{fig:mobile_operating_system_market_share_w} 
 \end{subfigure}
 
 \begin{subfigure}{\textwidth}
-   \includegraphics[width=1\linewidth]{images/mobile_operating_system_market_share_br.png}
+   \includegraphics[width=1\linewidth]{images/mobile_operating_system_market_share_br.pdf}
    \caption{Participação no mercado de Sistemas Operacionais móveis no Brasil.}
    \acsfont{Fonte: \cite{stats2020mobile}}
    \label{fig:mobile_operating_system_market_share_br}
@@ -91,9 +90,9 @@ Segundo \cite{stats2020mobile}, como mostrado nos gráficos das \figref{fig:mobi
 
 % \begin{figure}[h]
 % \centering
-% \subfigure[Participação no mercado de Sistemas Operacionais móveis em todo o mundo]{\includegraphics[width=0.47\linewidth]{images/mobile_operating_system_market_share_w.png}\label{fig:mobile_operating_system_market_share_w}}
+% \subfigure[Participação no mercado de Sistemas Operacionais móveis em todo o mundo]{\includegraphics[width=0.47\linewidth]{images/mobile_operating_system_market_share_w.pdf}\label{fig:mobile_operating_system_market_share_w}}
 % \qquad
-% \subfigure[Participação no mercado de Sistemas Operacionais móveis no Brasil]{\includegraphics[width=0.47\linewidth]{images/mobile_operating_system_market_share_br.png}\label{fig:mobile_operating_system_market_share_br}}
+% \subfigure[Participação no mercado de Sistemas Operacionais móveis no Brasil]{\includegraphics[width=0.47\linewidth]{images/mobile_operating_system_market_share_br.pdf}\label{fig:mobile_operating_system_market_share_br}}
 % \qquad
 % \caption[Participação no mercado de Sistemas Operacionais móveis, dados do Brasil e do mundo]{(a) Participação em todo o mundo (b) Participação no Brasil}
 % \end{figure}
@@ -138,8 +137,8 @@ Uma comparação entre as duas tecnologias foi realizada por \cite{GuhaBanerjee2
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/native-diff.png}
-  \caption{Passos do desenvolvimento de \acp{app} híbridos e nativos}
+  \includegraphics[width=\columnwidth]{images/native-diff.pdf}
+  \caption{Passos do desenvolvimento de \acp{app} híbridos e nativos.}
   \acsfont{Fonte: \cite{AngularMinds}}
   \label{fig:native_diff}
 \end{figure}
@@ -157,8 +156,8 @@ Segundo \cite{martin2008codigolimpo}, as \acp{api} podem ser classificadas em du
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/REST-API-synchronous-communication-schema.png}
-  \caption{Esquema de comunicação síncrona da \ac{api} \ac{rest}}
+  \includegraphics[width=\columnwidth]{images/REST-API-synchronous-communication-schema.pdf}
+  \caption{Esquema de comunicação síncrona da \ac{api} \ac{rest}.}
   \acsfont{Fonte: \cite{Bertoli2021}}
   \label{fig:REST-API}
 \end{figure}
@@ -173,11 +172,11 @@ O Flutter tem ganhado popularidade entre os desenvolvedores devido à sua produt
 
 Uma avaliação do Flutter em relação a outras tecnologias de desenvolvimento de aplicativos móveis foi realizada por \cite{Zhou2021}, que analisaram a usabilidade, desempenho e eficiência do Flutter em comparação com o React Native e o desenvolvimento nativo. Os resultados indicaram que o Flutter ofereceu uma experiência de usuário superior em relação ao React Native e uma performance comparável ao desenvolvimento nativo, além de apresentar uma curva de aprendizado mais suave e uma maior eficiência no desenvolvimento de protótipos. Estes pontos reforçam a escolha do Flutter como principal \textit{framework} escolhido para o projeto.
 
-Dados de interesse do Google\footnote{\label{google_trends_flutter_react}Google Trends: \url{https://trends.google.com/trends/explore?date=2018-01-02\%202023-01-03&q=\%2Fg\%2F11h03gfxy9,\%2Fg\%2F11f03_rzbg}} corroboram o crescimento do Flutter em relação ao seu principal concorrente, como mostrado na figura abaixo.
+Dados de interesse do Google\footnote{\label{google_trends_flutter_react}Google Trends: \url{https://trends.google.com/trends/explore?date=2018-01-02\%202023-01-03&q=\%2Fg\%2F11h03gfxy9,\%2Fg\%2F11f03_rzbg}} corroboram o crescimento do Flutter em relação ao seu principal concorrente, como mostrado na \figref{fig:interesse_flutter_react}.
 
 \begin{figure}[h]
 \centering
-  \includegraphics[width=\columnwidth]{images/interesse_flutter_react.png}
+  \includegraphics[width=\columnwidth]{images/interesse_flutter_react.pdf}
   \caption{Tendência mundial de popularidade do Flutter (vermelho) e do React Native (azul) (2018–2023).}
   \acsfont{Fonte: Google Trends\footref{google_trends_flutter_react}}
   \label{fig:interesse_flutter_react}
@@ -187,8 +186,8 @@ Como explicado na página oficial sobre a arquitetura do Flutter\footnote{\label
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/flutter-archdiagram.png}
-  \caption{Visão geral da arquitetura do Flutter}
+  \includegraphics[width=\columnwidth]{images/flutter-archdiagram.pdf}
+  \caption{Visão geral da arquitetura do Flutter.}
   \acsfont{Fonte: Flutter\footref{flutter_arch}}
   \label{fig:flutter-archdiagram}
 \end{figure}
@@ -225,6 +224,22 @@ A independência de frameworks também é um conceito importante na Arquitetura 
 
 Por fim, a testabilidade é um princípio fundamental na Arquitetura Limpa. Segundo Martin, o código deve ser escrito de forma a ser facilmente testado, permitindo que os testes sejam executados com rapidez e eficiência. Para isso, é importante que as diferentes camadas da aplicação estejam bem separadas, permitindo que cada uma delas possa ser testada de forma independente.
 
+\section{Engenharia de requisitos}\label{sec:eng_req}
+A engenharia de requisitos é um processo fundamental na concepção e construção de sistemas, pois busca definir os requisitos do sistema em conjunto com os \textit{stakeholders}, produzindo uma série de artefatos em suas fases de concepção. 
+
+Segundo \cite{kotonya1998requirements}, a engenharia de requisitos é o processo de descobrir, analisar, documentar e verificar serviços e restrições para um sistema. Embora não haja uma maneira irrefutável de garantir que as especificações construídas pela engenharia de requisitos sejam totalmente compatíveis com as necessidades dos \textit{stakeholders} e atendam às suas necessidades, este é o maior desafio encontrado na engenharia de requisitos \cite{pressman2016engenharia}. 
+
+As etapas da engenharia de requisitos incluem a concepção e análise de requisitos, levantamento e compreensão dos requisitos junto ao cliente, negociação dos requisitos, especificação e modelagem desses requisitos, tendo como objetivo documentar as necessidades e os propósitos do software.
+
+\section{Requisitos funcionais de um software}\label{sec:req_func}
+Segundo \cite{pressman2016engenharia}, os requisitos funcionais, que descrevem as funções e serviços que o software deve oferecer, descrevem como o software deve funcionar, quais entradas devem ser processadas e quais saídas devem ser geradas em resposta a essas entradas. 
+
+\section{Casos de uso de um software}\label{sec:req_func}
+Os Casos de Uso (\textit{Use Cases}) são uma técnica de modelagem de requisitos de software que descrevem as interações entre o usuário e o sistema. Eles ajudam a identificar as funcionalidades e serviços que o software deve oferecer, além de fornecer um meio de comunicação claro entre as equipes de desenvolvimento e os \textit{stakeholders}, como aborda \cite{martin2008agile}.
+
+\section{Prototipação}\label{sec:prototipacao}
+\cite{warfel2009prototyping} destaca que os protótipos de baixa fidelidade são rápidos e baratos de criar, permitindo que os \textit{designers} testem e refinem rapidamente ideias iniciais. Já os protótipos de alta fidelidade, embora mais caros e demorados, podem ajudar a obter \textit{feedback} mais preciso e detalhado sobre o \textit{design} e a usabilidade do software.
+
 \section{Desenvolvimento de sistemas}\label{sec:dev_sistemas}
 O desenvolvimento de sistemas é um processo que envolve diversas etapas, desde a concepção do projeto até a entrega do produto final. Segundo \cite{pressman2016engenharia}, a fase de análise de requisitos é fundamental para entender as necessidades do cliente e garantir que o sistema desenvolvido atenda às expectativas. 
 
@@ -240,7 +255,7 @@ O Scrum é uma metodologia ágil baseada em uma estrutura de trabalho em equipe 
 
 \begin{figure}[h]
 \centering
-  \includegraphics[width=\columnwidth]{images/scrum.png}
+  \includegraphics[width=\columnwidth]{images/scrum.pdf}
   \caption{Representação de uma Sprint com o framework Scrum.}
   \acsfont{Fonte: Adaptação de \cite{sutherland2014scrum}}
   \label{fig:scrum}
@@ -263,7 +278,7 @@ O Kanban é uma metodologia ágil que surgiu no Japão, em meados da década de 
 
 \begin{figure}[h]
 \centering
-  \includegraphics[width=\columnwidth]{images/kanban.png}
+  \includegraphics[width=\columnwidth]{images/kanban.pdf}
   \caption{Representação de um quadro de desenvolvimento com o framework Kanban.}
   \acsfont{Fonte: \cite{metodoagilKanban}}
   \label{fig:kanban}

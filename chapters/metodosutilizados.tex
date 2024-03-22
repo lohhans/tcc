@@ -1,8 +1,8 @@
 \chapter{Métodos Utilizados}\label{ch:metodos}
-Este capítulo descreve a metodologia aplicada no desenvolvimento do trabalho, que tem como objetivo uma solução para dispositivos móveis para a realização de experimentos das atividades enzimáticas do solo. Para realizar o trabalho foram utilizados os conceitos de engenharia de requisitos como parte inicial do projeto, a modelagem do sistema por meio de requisitos funcionais e casos de uso, e a definição dos processos de desenvolvimento do software que serão apresentados nas próximas seções.
+Este capítulo descreve a metodologia aplicada no desenvolvimento do trabalho, que tem como objetivo uma solução para dispositivos móveis para a realização de experimentos das atividades enzimáticas do solo. Para realizar o trabalho, foram utilizados os conceitos de engenharia de requisitos como parte inicial do projeto, a modelagem do sistema por meio de requisitos funcionais e casos de uso, e a definição dos processos de desenvolvimento do software que serão apresentados nas próximas seções.
 
 \section{Análise de Viabilidade}\label{sec:analise_viabilidade}
-Nesta fase foi feita uma estimativa das diversas maneiras de suprir as necessidades do cliente, identificando tanto a parte tecnológica como a parte de técnica. Foi verificado o retorno acadêmico da ferramenta, os avanços e melhorias no processo de experimentação do solo que seriam possíveis obter com a mesma.
+Nesta fase, foi feita uma estimativa das diversas maneiras de suprir as necessidades do cliente, identificando tanto a parte tecnológica como a parte de técnica. Foi verificado o retorno acadêmico da ferramenta, os avanços e melhorias no processo de experimentação do solo que seriam possíveis obter com a mesma.
 
 \section{Definições do Sistema: Abordagens, Requisitos e Recursos}\label{sec:eng_sys}
 As \ac{ae} são as informações chave das funcionalidades do sistema que foi desenvolvido, desta forma, é importante entender nesta etapa suas características, aplicações e importância, portanto, é relevante salientar que o estudo das \acp{ae} do solo tem ganhado cada vez mais notoriedade devido à sua relação com a \ac{qs} e com a produtividade das culturas agrícolas. O cálculo dessas atividades torna-se fundamental para a compreensão dos processos bioquímicos que ocorrem no solo e para a avaliação do impacto das práticas de manejo no solo. No entanto, o cálculo das \acp{ae} do solo é um processo complexo e demorado, que envolve a utilização de várias técnicas e equipamentos específicos.
@@ -11,9 +11,15 @@ Nesse contexto, o desenvolvimento deste sistema para o cálculo das \acp{ae} do 
 
 \subsection{Laboratório BCC Coworking}\label{sec:lab}
 % \section{Laboratório BCC Coworking}\label{sec:lab}
-O projeto teve início na disciplina de Desenvolvimento Distribuído de Software, no curso de \ac{bcc} da \ac{ufape}, o qual, logo em seguida, teve seu escopo de desenvolvimento integrado com o Laboratório \ac{bcc} Coworking, da mesma instituição, este que é um Laboratório de Pesquisa e Desenvolvimento projetado por docentes deste curso, o propósito deste espaço é fornecer um ambiente apropriado para o desenvolvimento de projetos reais, com a supervisão de profissionais da área para garantir o aprimoramento do conhecimento e experiência técnica. Este espaço é destinado aos estudantes que buscam autonomia, estímulo e desenvolvimento de projetos, visando melhorar sua produtividade e expandir seu conhecimento prático.
+O projeto teve início na disciplina de Desenvolvimento Distribuído de Software, no curso de \ac{bcc} da \ac{ufape}, o qual, logo em seguida, teve seu escopo de desenvolvimento integrado com o Laboratório \ac{bcc} Coworking, da mesma instituição. 
 
-A proposta do Enzitech foi concebida através de uma observação de melhoria dentre os docentes e discentes de agronomia, ao realizarem as atividades de campo, onde dados eram coletados em papéis e depois passados para uma planilha para o cálculo e coleta de resultados, assim, o \ac{lema} da \ac{ufape} identificou a necessidade de desenvolver uma solução que pudesse aprimorar seus processos, portanto, recorreu à expertise do Laboratório BCC Coworking, reconhecido por suas soluções inovadoras e de qualidade, para que juntos pudessem desenvolver uma solução que atendesse a essas demandas específicas. 
+O Laboratório de Pesquisa e Desenvolvimento é projetado por docentes deste curso, o propósito deste espaço é fornecer um ambiente apropriado para o desenvolvimento de projetos reais, com a supervisão de profissionais da área para garantir o aprimoramento do conhecimento e experiência técnica. 
+
+Este espaço é destinado aos estudantes que buscam autonomia, estímulo e desenvolvimento de projetos, visando melhorar sua produtividade e expandir seu conhecimento prático.
+
+A proposta do Enzitech foi concebida através de uma observação de melhoria dentre os docentes e discentes de agronomia, ao realizarem as atividades de campo, onde dados eram coletados em papéis e depois passados para uma planilha para o cálculo e coleta de resultados.
+
+Assim, o \ac{lema} da \ac{ufape} identificou a necessidade de desenvolver uma solução que pudesse aprimorar seus processos, portanto, recorreu à expertise do Laboratório BCC Coworking, reconhecido por suas soluções inovadoras e de qualidade, para que juntos pudessem desenvolver uma solução que atendesse a essas demandas específicas. 
 
 A equipe foi composta por Armstrong Lohãns, Matheus Noronha, Weverton Cintra, José Vieira, Eduarda Interaminense, as professoras Erika Valente e Jamilly Barros — do curso de Agronomia — que respectivamente propuseram o sistema. A equipe do Enzitech realizou várias reuniões para obter um conjunto inicial de requisitos e elaborar uma breve apresentação da ideia do sistema, além de discutir como o sistema poderia melhorar os processos na área da Agronomia.
 
@@ -110,35 +116,66 @@ Utilizando alguns valores de exemplo, o cálculo é realizado da seguinte forma:
 
 
 \section{Especificação de requisitos}\label{sec:especificacao_de_requisitos}
-A engenharia de requisitos é um processo fundamental na concepção e construção de sistemas, pois busca definir os requisitos do sistema em conjunto com os \textit{stakeholders}, produzindo uma série de artefatos em suas fases de concepção. Segundo \cite{kotonya1998requirements}, a engenharia de requisitos é o processo de descobrir, analisar, documentar e verificar serviços e restrições para um sistema. Embora não haja uma maneira irrefutável de garantir que as especificações construídas pela engenharia de requisitos sejam totalmente compatíveis com as necessidades dos \textit{stakeholders} e atendam às suas necessidades, este é o maior desafio encontrado na engenharia de requisitos \cite{pressman2016engenharia}. As etapas da engenharia de requisitos incluem a concepção e análise de requisitos, levantamento e compreensão dos requisitos junto ao cliente, negociação dos requisitos, especificação e modelagem desses requisitos, tendo como objetivo documentar as necessidades e os propósitos do software.
 
-O pontapé inicial do projeto em si foi uma reunião, como proposto nos \textit{frameworks} ágeis, entre as partes envolvidas, cliente (docentes de Agronomia da \ac{ufape}), \ac{po} (Proprietário do produto, em tradução livre) e desenvolvedores, a fim de levantar os requisitos funcionais do \ac{mvp}. Nesta reunião foram explanados os pontos onde o \ac{app} auxiliaria no gerenciamento de experimentos e no processo dos cálculos enzimáticos, foram discutidas regras de negócios e requisitos necessários, identidade visual, além do início de um protótipo de baixa fidelidade para conduzir o \textit{brainstorming} a respeito de como os requisitos se transformariam em funcionalidades, e claro, as tecnologias utilizadas em todo o ciclo de desenvolvimento.
+O pontapé inicial do projeto em si foi uma reunião, como proposto nos \textit{frameworks} ágeis, entre as partes envolvidas, cliente (docentes de Agronomia da \ac{ufape}), \ac{po} (Proprietário do produto, em tradução livre) e desenvolvedores, a fim de levantar os requisitos funcionais do \ac{mvp}. 
+
+Nesta reunião, foram explanados os pontos onde o \ac{app} auxiliaria no gerenciamento de experimentos e no processo dos cálculos enzimáticos, foram discutidas regras de negócios e requisitos necessários, identidade visual, além do início de um protótipo de baixa fidelidade para conduzir o \textit{brainstorming} a respeito de como os requisitos se transformariam em funcionalidades, e claro, as tecnologias utilizadas em todo o ciclo de desenvolvimento.
 
 O projeto surge com a necessidade de um \ac{app} para celulares, facilitando a mobilidade dos usuários nos locais de coletas de dados para os experimentos, dessa forma, tudo foi pensado voltado ao desenvolvimento deste aplicativo móvel.
 
 \subsection{Requisitos funcionais}\label{ssec:requisitos_funcionais}
-A partir disso, os requisitos funcionais do sistema foram definidos e especificados de acordo com a \tabref{table:requisitos_funcionais}, abaixo.
+
+Os requisitos funcionais descritos na \tabref{table:requisitos_funcionais} têm o objetivo de especificar as funcionalidades que o sistema proposto deve oferecer.
+
+Desta forma, os requisitos funcionais do sistema foram definidos e especificados como mostra a tabela a seguir.
+
+% \begin{longtable}{|c|c|}
+%     \caption{Descrição dos requisitos funcionais do sistema.}
+%     \label{table:requisitos_funcionais}        \\
+%     \toprule
+% Código & Descrição \\
+%     \midrule
+% \endfirsthead
+%     \caption[]{Descrição dos requisitos funcionais do sistema (continuação).}    \\
+%     \toprule
+% Código & Descrição \\
+%     \midrule
+% \endhead
+%     \midrule
+%     \multicolumn{2}{r}{}{\footnotesize\itshape Continua na próxima página}
+% \endfoot
+%     \bottomrule
+% \endlastfoot
+% \textbf{RF01}   & O usuário deve ser capaz de se cadastrar no sistema \\  \addlinespace[5pt]
+% \textbf{RF02}   & O usuário deve ser capaz de realizar \textit{login} no sistema  \\  \addlinespace[5pt]
+% \textbf{RF03}   & O usuário deve ser capaz de recuperar sua senha no sistema \\  \addlinespace[5pt]
+% \textbf{RF04}   & O usuário deve ser capaz de criar um tratamento \\  \addlinespace[5pt]
+% \textbf{RF05}   & O usuário deve ser capaz de deletar um tratamento \\  \addlinespace[5pt]
+% \textbf{RF06}   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar todos os tratamentos disponíveis}\hbox{\strut no sistema para seus experimentos}} \\  \addlinespace[5pt]
+% \textbf{RF07}   & O usuário administrador deve ser capaz de criar uma nova enzima \\  \addlinespace[5pt]
+% \textbf{RF08}   & O usuário administrador deve ser capaz de deletar uma enzima \\  \addlinespace[5pt]
+% \textbf{RF09}   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar todas as enzimas disponíveis}\hbox{\strut no sistema para seus experimentos}} \\  \addlinespace[5pt]
+% \textbf{RF10}   & O usuário deve ser capaz de criar um novo experimento \\  \addlinespace[5pt]
+% \textbf{RF11}   & O usuário deve ser capaz de deletar um experimento \\  \addlinespace[5pt]
+% \textbf{RF12}   & O usuário deve ser capaz de visualizar seus experimentos cadastrados \\  \addlinespace[5pt]
+% \textbf{RF13}   & \vtop{\hbox{\strut O usuário deve ser capaz de utilizar filtros de busca}\hbox{\strut para visualizar seus experimentos cadastrados}} \\  \addlinespace[5pt]
+% \textbf{RF14}   & O usuário deve ser capaz de visualizar detalhes dos seus experimentos cadastrados \\  \addlinespace[5pt]
+% \textbf{RF15}   & \vtop{\hbox{\strut O usuário deve ser capaz de inserir dados para o cálculo enzimático}\hbox{\strut no seu experimento}} \\  \addlinespace[5pt]
+% \textbf{RF16}   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar resultados discrepantes do cálculo}\hbox{\strut enzimático antes de salvar no seu experimento}}  \\  \addlinespace[5pt]
+% \textbf{RF17}   & \vtop{\hbox{\strut O usuário deve ser capaz de editar o resultado do cálculo enzimático}\hbox{\strut antes de salvar no seu experimento}} \\  \addlinespace[5pt]
+% \textbf{RF18}   & \vtop{\hbox{\strut O usuário deve ser capaz de salvar o resultado do cálculo enzimático}\hbox{\strut no seu experimento}} \\  \addlinespace[5pt]
+% \textbf{RF19}   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar os resultados e o progresso}\hbox{\strut do seu experimento}} \\  \addlinespace[5pt]
+% \textbf{RF20}   & O usuário deve ser capaz de exportar os resultados do seu experimento  \\  \addlinespace[5pt]
+%     \\
+% \end{longtable}
+
+% ------------------------
 
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|}
 \hline
-
-% % \DefTblrTemplate{caption}{default}{Teste 1}    % Removes a caption
-% \DefTblrTemplate{capcont}{default}{Continuação da página anterior}    % Removes a caption on subsequent pages
-% \DefTblrTemplate{contfoot}{default}{Continua na próxima página}   % Removes text denoting continuation on next
-
-% \begin{longtblr}[
-%   caption = {Descrição dos requisitos funcionais do sistema}
-%   label = {table:requisitos_funcionais},
-% ]{
-%   colspec = {|XX[4]|},
-%   rowhead = 1,
-%   hlines,
-%   row{even} = {gray9},
-%   row{1} = {olive9},
-% } 
 \textbf{Código} & \textbf{Descrição} \\ \hline
 \textbf{RF01}   & O usuário deve ser capaz de se cadastrar no sistema \\ \hline
 \textbf{RF02}   & O usuário deve ser capaz de realizar \textit{login} no sistema \\ \hline
@@ -160,19 +197,15 @@ A partir disso, os requisitos funcionais do sistema foram definidos e especifica
 \textbf{RF18}   & \vtop{\hbox{\strut O usuário deve ser capaz de salvar o resultado do cálculo enzimático}\hbox{\strut no seu experimento}} \\ \hline
 \textbf{RF19}   & \vtop{\hbox{\strut O usuário deve ser capaz de visualizar os resultados e o progresso}\hbox{\strut do seu experimento}} \\ \hline
 \textbf{RF20}   & O usuário deve ser capaz de exportar os resultados do seu experimento  \\ \hline
-% \end{longtblr}
-
 \end{tabular}%
 }
-\caption{Descrição dos requisitos funcionais do sistema}
+\caption{Descrição dos requisitos funcionais do sistema.}
 \label{table:requisitos_funcionais}
 \end{table}
 
-Segundo \cite{pressman2016engenharia}, os requisitos funcionais, que descrevem as funções e serviços que o software deve oferecer, descrevem como o software deve funcionar, quais entradas devem ser processadas e quais saídas devem ser geradas em resposta a essas entradas. Neste sentido, os requisitos funcionais descritos na \tabref{table:requisitos_funcionais} têm o objetivo de especificar as funcionalidades que o sistema proposto deve oferecer.
-
 \subsection{Casos de uso}\label{ssec:casos_de_uso}
 
-Os Casos de Uso (\textit{Use Cases}) são uma técnica de modelagem de requisitos de software que descrevem as interações entre o usuário e o sistema. Eles ajudam a identificar as funcionalidades e serviços que o software deve oferecer, além de fornecer um meio de comunicação claro entre as equipes de desenvolvimento e os \textit{stakeholders}. A partir disto, foi elaborado um conjunto de casos de uso do sistema, demonstrado na \tabref{table:casos_de_uso}, com o objetivo de centrar os requisitos funcionais descritos na \tabref{table:requisitos_funcionais} e relacionar os mesmos com os tipos de usuários do sistema.
+Foi elaborado um conjunto de casos de uso do sistema, demonstrado na \tabref{table:casos_de_uso}, com o objetivo de centrar os requisitos funcionais descritos na \tabref{table:requisitos_funcionais} e relacionar os mesmos com os tipos de usuários do sistema.
 
 \begin{table}[H]
 \centering
@@ -194,7 +227,7 @@ UC11 & Compartilhar resultados do experimento & \vtop{\hbox{\strut Usuário comu
 
 \end{tabular}
 }
-\caption{Casos de Uso do sistema}
+\caption{Casos de Uso do sistema.}
 \label{table:casos_de_uso}
 \end{table}
 
@@ -202,22 +235,22 @@ Uma reprodução visual dos Casos de Uso apontados na \tabref{table:casos_de_uso
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/use-cases-enzitech.png}
+  \includegraphics[width=\columnwidth]{images/use-cases-enzitech.pdf}
   \caption{Diagrama de Casos de Uso do sistema.}
   % \acsfont{Fonte: Autoria própria}
   \label{fig:use-cases-enzitech}
 \end{figure}
 
-Graças ao diagrama acima, é possível notar, de forma simples, que um usuário administrador possui um privilégio em comparação ao usuário comum: a criação e exclusão das enzimas, este Caso de Uso que ficou restrito à administração do sistema por ser compartilhada entre todos os usuários do Enzitech, podendo causar perdas de dados se sua alteração for realizada por um usuário comum, portando, surgiu a necessidade de diferenciar ambos os tipos de usuários no sistema e realizar estas validações para a disponibilização dessa \textit{feature}. 
+Graças ao diagrama acima, é possível notar, de forma simples, que um usuário administrador possui um privilégio em comparação ao usuário comum: a criação e exclusão das enzimas, este Caso de Uso que ficou restrito à administração do sistema por ser compartilhada entre todos os usuários do Enzitech, podendo causar perdas de dados se sua alteração for realizada por um usuário comum.
+
+Portando, surgiu a necessidade de diferenciar ambos os tipos de usuários no sistema e realizar estas validações para a disponibilização dessa \textit{feature}. 
 
 \section{Protótipo}
-\cite{warfel2009prototyping} destaca que os protótipos de baixa fidelidade são rápidos e baratos de criar, permitindo que os \textit{designers} testem e refinem rapidamente ideias iniciais. Já os protótipos de alta fidelidade, embora mais caros e demorados, podem ajudar a obter \textit{feedback} mais preciso e detalhado sobre o \textit{design} e a usabilidade do software.
-
 Dentre as diversas reuniões do projeto, houve a discussão das funcionalidades para gerar um protótipo de baixa fidelidade, para possíveis refinamentos, antes da elaboração de um protótipo de alta fidelidade, que demanda mais tempo e esforço. Junto desse protótipo, foi idealizado a identidade visual e o nome oficial para o projeto, que passou a se chamar "Enzitech".
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/prototipo_baixa.png}
+  \includegraphics[width=\columnwidth]{images/prototipo_baixa.pdf}
   \caption{Parte do protótipo final de baixa fidelidade.}
   % \acsfont{Fonte: Autoria própria}
   \label{fig:prototipo_baixa}
@@ -227,7 +260,7 @@ Como é possível ver na \figref{fig:prototipo_baixa}, o protótipo de baixa fid
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/exemplo_prototipo_alta.png}
+  \includegraphics[width=\columnwidth]{images/exemplo_prototipo_alta.pdf}
   \caption{Parte do protótipo final de alta fidelidade.}
   % \acsfont{Fonte: Autoria própria}
   \label{fig:exemplo_prototipo_alta}
@@ -237,7 +270,7 @@ Já nas \figref{fig:exemplo_prototipo_alta} e \figref{fig:prototipo_alta}, é po
 
 \begin{figure}[H]
 \centering
-  \includegraphics[width=\columnwidth]{images/prototipo_alta.png}
+  \includegraphics[width=\columnwidth]{images/prototipo_alta.pdf}
   \caption{Visão geral do protótipo final de alta fidelidade.}
   % \acsfont{Fonte: Autoria própria}
   \label{fig:prototipo_alta}
@@ -258,19 +291,19 @@ De acordo com o site oficial\footnote{\label{flutter_install}Instalação do Flu
    \item Ferramentas no ambiente do Windows:
    \begin{itemize}
      \item Windows PowerShell 5.0 ou mais recente (pré-instalado com o Windows 10);
-     \item Git para Windows 2.x, com a opção "Use o Git no prompt de comando do Windows";
+     \item Git para Windows 2.x, com a opção "Use o Git no prompt de comando do Windows".
    \end{itemize}
  \end{itemize}
 
  Com todos os requisitos preenchidos, basta seguir o passo a passo detalhado como consta no site oficial\footref{flutter_install}.
 
 \subsection{Instalação do Android Studio}\label{ssec:instalacao_android_studio}
-Como consta no tutorial oficial\footref{flutter_install}, a instalação do Android Studio é essencial, porém neste passo, gosto de utilizar o \textit{JetBrains Toolbox App}\footnote{\label{toolbox}\textit{JetBrains Toolbox App}: \url{https://www.jetbrains.com/pt-br/toolbox-app/}}, que faz a instalação e futuras atualizações em poucos cliques. Após instalar o \textit{JetBrains Toolbox App}, basta achar o Android Studio e clicar em instalar.
+Como consta no tutorial oficial\footref{flutter_install}, a instalação do Android Studio é essencial, porém neste passo, sugiro utilizar o \textit{JetBrains Toolbox App}\footnote{\label{toolbox}\textit{JetBrains Toolbox App}: \url{https://www.jetbrains.com/pt-br/toolbox-app/}}, que faz a instalação e futuras atualizações em poucos cliques. Após instalar o \textit{JetBrains Toolbox App}, basta achar o Android Studio e clicar em instalar.
 
 \begin{figure}[H]
 \centering
-  \includegraphics{images/toolbox.png}
-  \caption{\textit{JetBrains Toolbox App}}
+  \includegraphics{images/toolbox.pdf}
+  \caption{\textit{JetBrains Toolbox App.}}
   % \acsfont{Fonte: Autoria própria}
   \label{fig:toolbox}
 \end{figure}
@@ -283,7 +316,7 @@ Após instalado, é necessário abrir o Android Studio, fazer sua configuração
    \item Selecione uma ou mais imagens do sistema para as versões do Android que deseja emular e selecione Avançar. Uma imagem x86 ou x86\_64 é recomendada;
    \item Na aba de Performance do emulador, selecione Hardware - GLES 2.0 para habilitar a aceleração de hardware;
    \item Verifique se tudo está correto e selecione "Concluir";
-   \item Por fim, basta executar o emulador e ele iniciará;
+   \item Por fim, basta executar o emulador e ele iniciará.
  \end{enumerate}
 
  Outro passo imprescindível é ativar as ferramentas \ac{sdk} necessárias para a compilação do projeto Flutter em um arquivo executável \textsc{.apk} para o Android, basta seguir este passo a passo:
@@ -295,7 +328,7 @@ Após instalado, é necessário abrir o Android Studio, fazer sua configuração
    \item Na aba \textit{\ac{sdk} Tools}, verifique se existem versões instaladas para \textit{Android SDK Build-Tools 34-rc2}, caso não, instale a correspondente à versão do Android escolhida na criação do emulador ou a do seu dispositivo físico;
    \item Ainda na aba \textit{\ac{sdk} Tools}, verifique se existe pelo menos uma versão instalada para \textit{Android SDK Command-line Tools}, caso contrário, instale a última versão disponível;
    \item Ainda na aba \textit{\ac{sdk} Tools}, verifique se o \textit{Android SDK Platform-Tools} está instalado, caso contrário, instale;
-   \item Opcional: Ainda na aba \textit{\ac{sdk} Tools}, verifique se o \textit{Intel x86 Emulator Accelerator (HAXM installer)} está instalado, caso contrário, instale (esta ferramenta melhora a performance do emulador caso seu sistema suporte);
+   \item Opcional: Ainda na aba \textit{\ac{sdk} Tools}, verifique se o \textit{Intel x86 Emulator Accelerator (HAXM installer)} está instalado, caso contrário, instale (esta ferramenta melhora a performance do emulador caso seu sistema suporte).
  \end{enumerate}
  
 \subsection{Instalação do VSCode}\label{ssec:instalacao_vscode}
@@ -312,7 +345,7 @@ O DevTools\footnote{\label{dev_tools}DevTools: \url{https://docs.flutter.dev/dev
  \begin{enumerate}
    \item Inspecionamento do layout da interface do usuário e o estado de um aplicativo Flutter;
    \item Diagnóstico de problemas de instabilidade no desempenho da interface do usuário em um aplicativo Flutter;
-   \item Visualização de informações gerais de \textit{log} e diagnóstico sobre um aplicativo de linha de comando Flutter ou Dart em execução;
+   \item Visualização de informações gerais de \textit{log} e diagnóstico sobre um aplicativo de linha de comando Flutter ou Dart em execução.
    % \item Entre outras funcionalidades;
  \end{enumerate}
 

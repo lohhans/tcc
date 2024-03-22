@@ -44,10 +44,12 @@ A comunicação entre o aplicativo mobile com o sistema do Enzitech implantado �
 Todo o aplicativo do Enzitech foi desenvolvido para a plataforma [Android](http://www.android.com). Utilizando o framework [Flutter](https://flutter.dev/) para o desenvolvimento da interface de usuário e a linguagem de programação [Dart](https://dart.dev/) para interação com a API.
 
 ## Modelagem do Banco de dados
-![image](https://raw.githubusercontent.com/lohhans/tcc/main/images/er.jpg)
+<img src="https://github.com/lohhans/tcc/assets/30741312/5d20f3f8-7768-4938-b669-115d7fddf9c2"  width="500">
 
 ## Arquitetura simplificada da infraestrutura do Enzitech
-![image](https://raw.githubusercontent.com/lohhans/tcc/main/images/arquitetura_enzitech.png)
+<img src="https://github.com/lohhans/tcc/assets/30741312/12fe7536-7d5e-446a-9fc5-3c742e70da56"  width="500">
+
+---
 
 > O código fonte do aplicativo e do back-end podem ser acessados nos links abaixo:
 > - [Aplicativo](https://github.com/bcccoworkingufape/enzitech_app)
